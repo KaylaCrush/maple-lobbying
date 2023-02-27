@@ -1,12 +1,4 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-import datetime, logging
+import datetime, logging, requests
 from bs4 import BeautifulSoup as bs
 from src.utils import pull_html
 
@@ -14,28 +6,32 @@ search_page_url = 'https://www.sec.state.ma.us/LobbyistPublicSearch/'
 
 def get_lobbyist_urls(year):
     year = str(year)
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+    # modified from https://stackoverflow.com/questions/69616689/parsing-aspx-site-with-python-post-request
     url = search_page_url
+    with requests.Session() as s:
+        s.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'
 
-    logging.info(f"Pulling lobbyist urls for {year} from {url}")
-    driver.get(url)
+        r = s.get("https://www.sec.state.ma.us/LobbyistPublicSearch/")
+        soup = bs(r.text,"lxml")
+        data = {i['name']:i.get('value','') for i in soup.select('input[name]')}
 
-    ##setup the parameters and run the search
-    lobbyist_radio_button = driver.find_element('id','ContentPlaceHolder1_rdbSearchByType')
-    lobbyist_radio_button.click
-    drop_down_boxes = driver.find_elements(By.CLASS_NAME,'p3')
-    Select(drop_down_boxes[0]).select_by_value(year)
-    Select(drop_down_boxes[-1]).select_by_index(0)
-    Select(driver.find_element('id','ContentPlaceHolder1_ucSearchCriteriaByType_drpType')).select_by_value('L')
-    driver.find_element('id','ContentPlaceHolder1_btnSearch').click()
+        data['ctl00$ContentPlaceHolder1$Search'] = "rdbSearchByType",
+        data["ctl00$ContentPlaceHolder1$ucSearchCriteriaByType$ddlYear"] = year,
+        data["ctl00$ContentPlaceHolder1$ucSearchCriteriaByType$txtN_ame"] = "",
+        data["ctl00$ContentPlaceHolder1$ucSearchCriteriaByType$txtName_Watermark_ClientState"] = "",
+        data["ctl00$ContentPlaceHolder1$ucSearchCriteriaByType$lddSearchType$DropDown"] = "3",
+        data["ctl00$ContentPlaceHolder1$ucSearchCriteriaByType$drpType"] = "L",
+        data["ctl00$ContentPlaceHolder1$drpPageSize"] = "20000",
+        data["ctl00$ContentPlaceHolder1$btnSearch"] = "Search"
 
-    html = driver.page_source
+        p = s.post('https://www.sec.state.ma.us/LobbyistPublicSearch/Default.aspx', data=data)
+
+        html = p.content
+
     soup = bs(html, 'html.parser')
-
-    url_list = []
     griditems = soup.find_all('a', class_=lambda tag: tag and tag=='BlueLinks', id=lambda tag: tag and 'SearchResultByTypeAndCategory' in tag)
     url_list = [url+item.attrs['href'] for item in griditems]
-    driver.close()
     return url_list
 
 def get_disclosure_urls(lobbyist_url):
