@@ -1,8 +1,8 @@
 import logging, argparse, datetime, pickle
-from settings import current_urls_file, urls_dict_file
-from lobbyingDataPage import *
-from lobbyingScraper import *
-from utils import *
+from src.settings import current_urls_file, urls_dict_file
+from src.lobbyingDataPage import *
+from src.lobbyingScraper import *
+from src.utils import *
 
 
 ########################
