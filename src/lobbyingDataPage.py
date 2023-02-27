@@ -1,6 +1,6 @@
 from types import SimpleNamespace
 from bs4 import BeautifulSoup as bs
-import settings
+import src.settings as settings
 import psycopg2
 import psycopg2.extras as extras
 import requests

@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import datetime, logging
 from bs4 import BeautifulSoup as bs
-from utils import pull_html
+from src.utils import pull_html
 
 search_page_url = 'https://www.sec.state.ma.us/LobbyistPublicSearch/'
 

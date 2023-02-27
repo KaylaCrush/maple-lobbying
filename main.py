@@ -95,7 +95,7 @@ def parse_arguments():
     all_help = """Scrape, process, and save all disclosure reports from sec.state.ma.us"""
     recent_help = """Scrape, process and save disclosure reports from the last 2 years. Default action"""
     test_help = """Create test data from saved urls and upload them to the database"""
-    process_help = """Process saved urls. Can include a specific year"""
+    process_help = """Process saved urls. Can optionally include a specific year"""
     verbose_help = "set logging level. Default = 0, max = 2"
 
     help_msg = f"""Maple Lobbying Scraper"""
@@ -104,7 +104,7 @@ def parse_arguments():
     parser.add_argument('-a', '--all', help = all_help, action = 'store_true')
     parser.add_argument('-r', '--recent', help = recent_help, action='store_true')
     parser.add_argument('-t', '--test', help = test_help, action = 'store_true')
-    parser.add_argument('-p', '--process', help = process_help, nargs = '?')
+    parser.add_argument('-p', '--process', help = process_help, nargs = '?', metavar = 'YEAR')
     parser.add_argument('-v', '--verbose', help=verbose_help, action='count', default=0)
 
     args = parser.parse_args()
