@@ -12,7 +12,7 @@ def get_lobbyist_urls(year):
     with requests.Session() as s:
         s.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'
 
-        r = s.get("https://www.sec.state.ma.us/LobbyistPublicSearch/")
+        r = s.get(search_page_url)
         soup = bs(r.text,"lxml")
         data = {i['name']:i.get('value','') for i in soup.select('input[name]')}
 

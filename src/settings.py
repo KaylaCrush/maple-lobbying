@@ -2,11 +2,11 @@ host = 'localhost'
 port = '5432'
 user = 'geekc'
 password = 'asdf'
+
 database = 'maple_lobbying'
 test_database = 'lobbying_test'
-urls_dict_file = 'urls_dict.pkl'
-current_urls_file = 'all_current_urls.pkl'
 
+urls_dict_file = 'data/urls_dict.pkl'
 
 psql_params_dict = {
     'host'      : host,
