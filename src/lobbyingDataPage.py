@@ -74,6 +74,8 @@ class DataPage:
                         ['date','recipient','type_of_expense','amount'],
                     'met_expenses':
                         ['date','lobbyist_name','event_type','payee','attendees','amount'],
+                    'pre_2016_met_expenses':
+                        ['date','lobbyist_name','event_type','payee','attendees','addresses','amount'],
                     'additional_expenses':
                         ['date_from','date_to','lobbyist_name','recipient_name','expense','amount'],
                     'all':
@@ -87,6 +89,7 @@ class DataPage:
         self.year = int(self.date_range[-4:])
         self.header = self.get_header_table() # Header table has info that we will need later for other tables
         self.tables = self.get_all_tables()
+        self.verify_row_lengths()
         logging.info(f"Pulled tables {', '.join([table for table in self.tables.__dict__.keys() if self.tables.__dict__[table]])} from {self.source_name} {self.date_range}")
 
 
@@ -99,27 +102,37 @@ class DataPage:
 
         # For activity tables, we have to figure out which kind we are dealing with
         if 'DateActivity or Bill No and Title' in self.soup.text:
-            tables.pre_2010_lobbying_activity = self.get_pre_2010_lobbying_activity()
+            tables.pre_2010_lobbying_activity = self.get_generic_table('grdvActivities', drop_last_row = False)
+            tables.pre_2010_lobbying_activity = self.add_lobbyist_name(tables.pre_2010_lobbying_activity, -1)
         if "Agent's positionDirect business association with public officialClient representedCompensation received" in self.soup.text:
-            tables.pre_2016_lobbying_activity = self.get_pre_2016_lobbying_activity()
+            tables.pre_2016_lobbying_activity = self.get_generic_table('grdvActivities', drop_last_row = False)
+            tables.pre_2016_lobbying_activity = self.add_lobbyist_name(tables.pre_2016_lobbying_activity, 1)
         elif "House / SenateBill Number or Agency Name" in self.soup.text:
             tables.lobbying_activity = self.get_lobbying_activity()
 
         # MOSTLY a consistent table, except that the individual lobbyist verison doesn't include the lobbyist name
         tables.campaign_contributions = self.get_generic_table("CampaignContribution")
-        if self.type == 'Lobbyist':
-            for row in tables.campaign_contributions:
-                row.insert(1, self.source_name)
+        tables.campaign_contributions = self.add_lobbyist_name(tables.campaign_contributions, 1)
+        if "Event typeEvent locationNames of all event participantsAddresses of all event participantsAmount" in self.soup.text:
+            tables.pre_2016_met_expenses = self.get_generic_table("METExpenses")
+            tables.pre_2016_met_expenses = self.add_lobbyist_name(tables.pre_2016_met_expenses, 1)
+        else:
+            tables.met_expenses = self.get_generic_table("METExpenses")
+            tables.met_expenses = self.add_lobbyist_name(tables.met_expenses, 1)
 
         # Very consistent tables
         tables.client_compensation = self.get_generic_table("ClientPaidToEntity")
         tables.salaries = self.get_generic_table('SalaryPaid')
         tables.operating_expenses = self.get_generic_table("OperatingExpenses")
-        tables.met_expenses = self.get_generic_table("METExpenses")
         tables.additional_expenses = self.get_generic_table("AdditionalExpenses")
-
-
+        tables.additional_expenses = self.add_lobbyist_name(tables.additional_expenses, 2)
         return tables
+
+    def add_lobbyist_name(self, table, index):
+        if self.type == 'Lobbyist':
+            for row in table:
+                row.insert(index, self.source_name)
+        return table
 
     def get_header_table(self):
         header_table = self.soup.find('div',id=lambda tag: tag and tag.startswith("ContentPlaceHolder1_pnl"))
@@ -171,20 +184,6 @@ class DataPage:
                     table_list.append(self.process_row(row, [lobbyist_name, client_name]))
         return table_list
 
-    def get_pre_2010_lobbying_activity(self):
-        table = self.get_generic_table('grdvActivities', drop_last_row = False)
-        if self.type == 'Lobbyist':
-            for i in range(len(table)):
-                table[i].insert(-1, self.source_name)
-        return table
-
-    def get_pre_2016_lobbying_activity(self):
-        table = self.get_generic_table('grdvActivities', drop_last_row = False)
-        if self.type == 'Lobbyist':
-            for i in range(len(table)):
-                table[i].insert(1, self.source_name)
-        return table
-
     # Helper function for modern lobbying activity tables
     def assign_lobbyist_and_client_names(self, full_table):
         if self.type == 'Entity':
@@ -192,26 +191,35 @@ class DataPage:
         else:
             return (self.header[0], full_table.text)
 
+    def verify_row_lengths(self):
+        for table in self.tables.__dict__:
+            if self.tables.__dict__[table]:
+                for i, row in enumerate(self.tables.__dict__[table]):
+                    if len(row) != len(self.columns_dict[table]):
+                        logging.warning(f"Invalid row length in table {table}. Removing row.")
+                        del self.tables.__dict__[table][i]
+
     ################
     # Save Methods #
     ################
 
     def save(self, params_dict = settings.psql_params_dict):
-        conn = psycopg2.connect(**params_dict)
-        header_id = self.get_header_id(conn)
-        if self.write_header_to_psql(conn, header_id):
-            for table_name in self.tables.__dict__.keys():
-                self.write_table_to_psql(table_name, conn, header_id)
+        with  psycopg2.connect(**params_dict) as conn:
+            header_id = self.get_header_id(conn)
+            if self.write_header_to_psql(conn, header_id):
+                for table_name in self.tables.__dict__.keys():
+                    self.write_table_to_psql(table_name, conn, header_id)
 
     def write_header_to_psql(self, conn, header_id):
         table = [tuple(row) for row in [[str(header_id)]+self.header]]
         return self.execute_insert_table_query('headers', table, conn)
 
     def write_table_to_psql(self, table_name, conn, header_id):
-        table_list = self.tables.__dict__[table_name]
+        table_list = self.tables.__dict__[table_name].copy()
+
         if not table_list: return True #If the table is empty let's not waste any time
-        for row in table_list: row.insert(0, str(header_id)) #add header id to each row
-        table = [tuple(row) for row in table_list]
+
+        table = [tuple([str(header_id)]+row) for row in table_list]
         return self.execute_insert_table_query(table_name, table, conn)
 
     def get_header_id(self, conn):
@@ -220,7 +228,7 @@ class DataPage:
             cursor.execute(query)
             response = cursor.fetchone()[0]
             header_id = response + 1 if response else 1
-            return header_id
+        return header_id
 
     #returns true if all rows of the table are uploaded to the database or if table is empty
     #returns false if any errors occur
