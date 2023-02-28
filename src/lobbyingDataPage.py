@@ -1,10 +1,9 @@
 from types import SimpleNamespace
 from bs4 import BeautifulSoup as bs
-import src.settings as settings
-import psycopg2
 import psycopg2.extras as extras
-import requests
-import logging
+import src.settings as settings
+
+import psycopg2, requests, logging
 
 #####
 # PageFactory:
@@ -139,12 +138,12 @@ class DataPage:
         return row_list
 
     # pulls a table with an id tag like %table_tag_includes%
-    def get_generic_table(self, table_tag_includes, drop_last = True):
+    def get_generic_table(self, table_tag_includes, drop_last_row = True):
         table_list = []
         tables = self.soup.findAll('table', id = lambda tag: tag and table_tag_includes in tag)
         for table in tables:
             rows = table.findAll('tr', class_=lambda tag: tag and 'Grid' in tag and 'Header' not in tag)
-            if drop_last: rows = rows[:-1]
+            if drop_last_row: rows = rows[:-1]
             for row in rows: #last row is total
                 table_list.append(self.process_row(row))
         return table_list
@@ -197,8 +196,7 @@ class DataPage:
     # Save Methods #
     ################
 
-    def save(self, params_dict = None):
-        params_dict = params_dict if params_dict else settings.psql_params_dict
+    def save(self, params_dict = settings.psql_params_dict):
         conn = psycopg2.connect(**params_dict)
         header_id = self.get_header_id(conn)
         if self.write_header_to_psql(conn, header_id):
