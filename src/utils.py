@@ -22,7 +22,11 @@ def unique_values(sequence):
 def new_values(new_sequence, old_sequence):
     return [x for x in new_sequence if x not in old_sequence]
 
-def fetch_conn_and_cursor(params_dict):
+def fetch_conn_and_cursor(params_dict, skip_db=False):
+    if skip_db:
+        params_dict = params_dict.copy()
+        params_dict.pop('database')
+
     conn = psycopg2.connect(**params_dict)
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT) # <-- ADD THIS LINE
     cursor = conn.cursor()
@@ -65,7 +69,7 @@ def generate_database_if_not_exists(params_dict):
     database = params_dict['database']
     if not does_database_exist(database):
         logging.info(f"Creating database {database}")
-        conn, cursor = fetch_conn_and_cursor(params_dict)
+        conn, cursor = fetch_conn_and_cursor(params_dict, skip_db=True)
         cursor.execute(sql.SQL("CREATE DATABASE {}").format(sql.Identifier(database)))
         conn.close()
 

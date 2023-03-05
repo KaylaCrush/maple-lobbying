@@ -126,7 +126,7 @@ def parse_arguments():
         logging.info(f'Processing saved urls starting at index {args.process}')
         process_saved_urls(args.process)
     else:
-        ls.get_recent_disclosures()
+        print(ls.get_recent_disclosures())
 
 
 
