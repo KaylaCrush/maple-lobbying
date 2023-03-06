@@ -4,7 +4,9 @@ Standalone client to scrape lobbyist disclosure pages from www.sec.state.ma.us/L
 
 # Local Docker
 
-The `docker-compose.yml` file configures a postgres database and a python container for the scraper:
+The `docker-compose.yml` file configures a postgres database and a python container for the scraper.
+
+Note that the container runs as root and will change the file permissions on the files it writes. You can run `sudo  chown -R $(id -u):$(id -g) .` to reset permissions.
 
 1. Install docker and [docker compose v2](https://docs.docker.com/compose/compose-v2/).
 2. Build the images with `docker compose build`
@@ -12,3 +14,4 @@ The `docker-compose.yml` file configures a postgres database and a python contai
 4. Open a shell into the python container with `docker compose exec lobby bash`. This gives you a terminal into the development environment, connected to your source directory. So this will reflect changes you make.
 5. Run your scraper commands `poetry run python main.py`
 6. Shut down the services: `docker compose down`. Add `-v` to also delete the database
+  

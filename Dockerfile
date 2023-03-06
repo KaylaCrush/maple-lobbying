@@ -12,4 +12,4 @@ RUN poetry config virtualenvs.create false
 # Install dependencies
 COPY poetry.lock pyproject.toml ./
 COPY src/__init__.py src/__init__.py
-RUN poetry lock --check && poetry install -vvv
+RUN poetry lock --check && poetry install
