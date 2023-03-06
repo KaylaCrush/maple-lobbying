@@ -1,7 +1,7 @@
-host = 'localhost'
+host = 'prod-sharedstack-postgresinstance19cdd68a-tcd37grhqqcj.ci5mri6omzhg.us-east-1.rds.amazonaws.com'
 port = '5432'
-user = 'geekc'
-password = 'asdf'
+user = 'kaylacrush'
+password = 'DJhW4lmNwvP1Xp5nlMymYS'
 
 database = 'maple_lobbying'
 test_database = 'lobbying_test'
@@ -17,5 +17,5 @@ psql_params_dict = {
 }
 
 
-psql_test_params_dict = psql_params_dict
+psql_test_params_dict = psql_params_dict.copy()
 psql_test_params_dict['database'] = test_database
