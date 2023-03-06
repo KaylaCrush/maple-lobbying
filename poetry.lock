@@ -21,14 +21,14 @@ tests-no-zope = ["cloudpickle", "cloudpickle", "hypothesis", "hypothesis", "mypy
 
 [[package]]
 name = "aws-cdk-asset-awscli-v1"
-version = "2.2.93"
+version = "2.2.94"
 description = "A library that contains the AWS CLI for use in Lambda Layers"
 category = "dev"
 optional = false
 python-versions = "~=3.7"
 files = [
-    {file = "aws-cdk.asset-awscli-v1-2.2.93.tar.gz", hash = "sha256:004072b1187a722c10218a2f7c98895fed166e0c8e00ab4981e22c1d5190a9ca"},
-    {file = "aws_cdk.asset_awscli_v1-2.2.93-py3-none-any.whl", hash = "sha256:a5ecdc8ec9ceab86563bd5094f8f2dffd0cd1d7fded9575126394926fb7af31c"},
+    {file = "aws-cdk.asset-awscli-v1-2.2.94.tar.gz", hash = "sha256:a44d316648a27491992c3bbba770a5e57577b5229a5024392d18189beab7e643"},
+    {file = "aws_cdk.asset_awscli_v1-2.2.94-py3-none-any.whl", hash = "sha256:0f1138165292268f6469a7b03b901312bda7e5146f3b7566dd94d88baa371cfe"},
 ]
 
 [package.dependencies]
@@ -55,14 +55,14 @@ typeguard = ">=2.13.3,<2.14.0"
 
 [[package]]
 name = "aws-cdk-asset-node-proxy-agent-v5"
-version = "2.0.75"
+version = "2.0.76"
 description = "@aws-cdk/asset-node-proxy-agent-v5"
 category = "dev"
 optional = false
 python-versions = "~=3.7"
 files = [
-    {file = "aws-cdk.asset-node-proxy-agent-v5-2.0.75.tar.gz", hash = "sha256:c18dec3efc27cc635af54babe432ca3c712eafbf42c9dc28cc59607d5be703ac"},
-    {file = "aws_cdk.asset_node_proxy_agent_v5-2.0.75-py3-none-any.whl", hash = "sha256:a4b7ad9dab60a28340699c191a6927f617ceccb051cc3ca5b96704dd6ed5d4f6"},
+    {file = "aws-cdk.asset-node-proxy-agent-v5-2.0.76.tar.gz", hash = "sha256:4cf8038e9b87d54f35a364d9c5e22e0ae29f38418f93dbb7fa662cc9ebaf8044"},
+    {file = "aws_cdk.asset_node_proxy_agent_v5-2.0.76-py3-none-any.whl", hash = "sha256:e1eaddfaa83aa1c60c7d664d9a0c01423a7529e36953e30badf91a5bdb7095e0"},
 ]
 
 [package.dependencies]
@@ -152,6 +152,7 @@ packaging = ">=22.0"
 pathspec = ">=0.9.0"
 platformdirs = ">=2"
 tomli = {version = ">=1.1.0", markers = "python_version < \"3.11\""}
+typing-extensions = {version = ">=3.10.0.0", markers = "python_version < \"3.10\""}
 
 [package.extras]
 colorama = ["colorama (>=0.4.3)"]
@@ -314,14 +315,14 @@ files = [
 
 [[package]]
 name = "constructs"
-version = "10.1.268"
+version = "10.1.269"
 description = "A programming model for software-defined state"
 category = "dev"
 optional = false
 python-versions = "~=3.7"
 files = [
-    {file = "constructs-10.1.268-py3-none-any.whl", hash = "sha256:d1956a5f31fc49832d98058eb86413e78071e203cd7a23a0b475096851986189"},
-    {file = "constructs-10.1.268.tar.gz", hash = "sha256:cef66b5db280ec4b07fd3c0f797634c89ae0487b69b096ac06b9d3f36ea1ca60"},
+    {file = "constructs-10.1.269-py3-none-any.whl", hash = "sha256:dec335cdd08247428dfd2d74965834b6bf06adb0fd79c5a7a8c6597cba86f9cc"},
+    {file = "constructs-10.1.269.tar.gz", hash = "sha256:1e6d05fc9f92e2beb7cf4e1ca1871af2e3df5f90f0a061d97bdc9e76547fb76f"},
 ]
 
 [package.dependencies]
@@ -728,5 +729,5 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.10"
-content-hash = "dc383763d878a7674c1bf704570196a36cf5c254ec505709d8a355538f60e80d"
+python-versions = ">=3.9,<4.0"
+content-hash = "cc8495d8a739655e1d081a36ee15d937f5812d092b917b72729c89900c73da7e"
