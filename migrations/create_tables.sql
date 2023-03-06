@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS pre_2016_lobbying_activity (
 
 CREATE TABLE IF NOT EXISTS pre_2010_lobbying_activity (
   header_id INTEGER,
-  date VARCHAR(50),
+  date VARCHAR(255),
   activity_or_bill_no_and_title TEXT,
   lobbyist_name VARCHAR(255),
   client_name VARCHAR(255)
@@ -108,8 +108,8 @@ CREATE TABLE IF NOT EXISTS pre_2016_met_expenses (
 
 CREATE TABLE IF NOT EXISTS additional_expenses (
   header_id INTEGER,
-  date_from VARCHAR(20),
-  date_to VARCHAR(20),
+  date_from VARCHAR(50),
+  date_to VARCHAR(50),
   lobbyist_name VARCHAR(255),
   recipient_name VARCHAR(255),
   expense VARCHAR(255),
