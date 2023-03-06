@@ -46,7 +46,7 @@ class SharedStack(Stack):
         )
 
     def _make_rds_instance(self):
-        self.db_admin = rds.Credentials.from_generated_secret("admin")
+        self.db_admin = rds.Credentials.from_generated_secret("mapleadmin")
         self.db = rds.DatabaseInstance(
             self,
             "PostgresInstance",
