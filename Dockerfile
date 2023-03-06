@@ -1,4 +1,4 @@
-FROM python:3.10.7-alpine
+FROM public.ecr.aws/docker/library/python:3.10.9-alpine
 
 RUN apk update 
 RUN apk add bash curl git postgresql-dev gcc python3-dev musl-dev 
