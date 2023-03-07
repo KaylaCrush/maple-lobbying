@@ -1,21 +1,25 @@
-host = 'prod-sharedstack-postgresinstance19cdd68a-tcd37grhqqcj.ci5mri6omzhg.us-east-1.rds.amazonaws.com'
-port = '5432'
-user = 'kaylacrush'
-password = 'DJhW4lmNwvP1Xp5nlMymYS'
+import os
 
-database = 'maple_lobbying'
-test_database = 'lobbying_test'
 
-urls_dict_file = 'data/urls_dict.pkl'
+database = "maple_lobbying"
+test_database = "lobbying_test"
+
+host = os.getenv("DB_HOST", "localhost")
+port = os.getenv("DB_PORT", "5432")
+user = os.getenv("DB_USER", "geekv")
+password = os.getenv("DB_PASSWORD", "asdf")
+dbname = os.getenv("DB_NAME", test_database)
+
+urls_dict_file = "data/urls_dict.pkl"
 
 psql_params_dict = {
-    'host'      : host,
-    'port'      : port,
-    'database'  : 'maple_lobbying',
-    'user'      : user,
-    'password'  : password
+    "host": host,
+    "port": port,
+    "database": dbname,
+    "user": user,
+    "password": password,
 }
 
 
 psql_test_params_dict = psql_params_dict.copy()
-psql_test_params_dict['database'] = test_database
+psql_test_params_dict["database"] = test_database

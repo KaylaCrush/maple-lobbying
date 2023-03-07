@@ -132,3 +132,6 @@ dmypy.json
 .pyre/
 
 
+# CDK asset staging directory
+.cdk.staging
+cdk.out

@@ -132,7 +132,7 @@ def parse_arguments():
     elif args.process:
         process_saved_urls()
     else:
-        ls.get_recent_disclosures()
+        print(ls.get_recent_disclosures())
 
 
 

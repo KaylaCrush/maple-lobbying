@@ -1,0 +1,46 @@
+#
+# This runs a development environment using docker compose.
+#
+# See the readme
+#
+
+version: "3"
+name: maple-lobbying
+
+services:
+  db:
+    # Matches AWS version
+    image: postgres:14.6-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: pg_isready
+      interval: 2s
+      timeout: 1s
+      retries: 5
+
+
+  lobby:
+    build:
+      context: .
+    command: tail -f /dev/null
+    working_dir: /app
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=maple_lobbying
+    volumes:
+      - .:/app
+
+volumes:
+  db: {}
