@@ -36,7 +36,11 @@ class SharedStack(Stack):
             instance_type=ec2.InstanceType("t3.nano"),
             desired_capacity=1,
             key_name=self.ssh_key_pair.key_name,
+            vpc_subnets=ec2.SubnetSelection(
+                subnet_type=ec2.SubnetType.PUBLIC, one_per_az=True
+            ),
         )
+        self.cluster.connections.allow_from_any_ipv4(ec2.Port.tcp(22), "Allow SSH")
 
     def _make_rds_instance(self):
         self.db_admin = rds.Credentials.from_generated_secret("mapleadmin")
