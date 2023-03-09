@@ -17,17 +17,9 @@ class SharedStack(Stack):
         # talk to each other.
         self.vpc = ec2.Vpc(self, "VPC", vpc_name="maple-net")
 
-        # # An EC2 host that can be ssh'd into and is on the VPC, so it can be
-        # # used to access resources in the VPC.
-        # self.bastion = ec2.BastionHostLinux(
-        #     self,
-        #     "Bastion",
-        #     instance_name="maple-net-bastion",
-        #     instance_type="t3.nano",
-        #     vpc=self.vpc,
-        #     subnet_selection={"subnetType": ec2.SubnetType.PUBLIC},
-        # )
-        # self.bastion.allow_ssh_access_from(ec2.Peer.any_ipv4())
+        self.ssh_key_pair = ec2.CfnKeyPair(
+            self, "SshKeyPair", key_name="maple-cluster-ssh"
+        )
 
         # An AWS RDS Postgres instance. This instance contains all maple-related
         # production databases.
@@ -43,6 +35,7 @@ class SharedStack(Stack):
             "BaseCapacity",
             instance_type=ec2.InstanceType("t3.nano"),
             desired_capacity=1,
+            key_name=self.ssh_key_pair.key_name,
         )
 
     def _make_rds_instance(self):
