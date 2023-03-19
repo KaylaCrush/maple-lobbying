@@ -2,9 +2,9 @@ from types import SimpleNamespace
 from bs4 import BeautifulSoup as bs
 import psycopg2.extras as extras
 import src.settings as settings
-from src.utils import insert_table
-import src.lobbyingScraper as ls
-import psycopg2, requests, logging, datetime
+from src.sql_manager import insert_table
+import src.seleniumScraper as scraper
+import psycopg2, logging, datetime
 
 #####
 # PageFactory:
@@ -12,13 +12,15 @@ import psycopg2, requests, logging, datetime
 ######
 
 class PageFactory:
-    def __new__(cls, url):
+    def __new__(cls, url, driver = None):
 
         if not url:
             logging.exception("PageFactory requires a url")
             return BlankPage()
+
         logging.debug(f'Pulling data from URL: {url}')
-        html = ls.pull_html(url)
+
+        html = scraper.pull_html(url, driver)
         soup = bs(html, 'html.parser')
 
         if PageFactory.check_validity(soup, url):
