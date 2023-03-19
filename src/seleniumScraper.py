@@ -1,21 +1,17 @@
 
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import undetected_chromedriver as uc
-import time
 from bs4 import BeautifulSoup as bs
 
-from lobbyingDataPage import PageFactory
-import datetime, logging, requests
+import datetime
 from bs4 import BeautifulSoup as bs
-from src.sql_manager import insert_table, execute_query
+from src.sql_manager import insert_table
 
 search_page_url = 'https://www.sec.state.ma.us/LobbyistPublicSearch/'
 
