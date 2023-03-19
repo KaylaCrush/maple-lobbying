@@ -1,0 +1,885 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /><link href="/css/styleapps.css" rel="stylesheet" type="text/css" meta="screen" /><link href="/css/topnav.css" rel="stylesheet" type="text/css" meta="screen" />
+<script type="text/javascript" src="/js/p7TMMscripts.js"></script>
+<script type="text/javascript" src="/js/google_analytics.js"></script>-->
+
+<!--<link href="/css/p7TMM04.css" rel="stylesheet" type="text/css" media="all" />-->
+
+<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="/css/lt8.css" /><![endif]-->
+
+<link rel="shortcut icon" href="/images/favicon.gif" type="image/x-icon" /><link href="/assets/uswds-2_11_2/css/uswds-app-final.css" rel="stylesheet" type="text/css" media="all" /><link href="/assets/css/cover-app-final.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--<link href="/assets/css/cover-b.css" rel="stylesheet" type="text/css" media="all" />-->
+
+<!-- DONT'T NEED -->
+<!-- <script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script> -->
+
+<!-- NEED FOR GLOBAL NAV -->
+<script src="/assets/uswds-2_11_2/js/uswds-init.min.js"></script>
+<script src="/assets/js/jquery-3.6.0.js"></script><title>
+	Lobbyist Public Search
+</title><link href="css/StyleSheet.css" type="text/css" rel="stylesheet" />
+    <script language="javascript" src="../Javascript/Help.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="outer">
+		<style>    
+.grid-container {padding-bottom:30px!important;}
+ul.usa-nav__primary.usa-accordion.usa-nav__primary-global.usa-accordion-global li, 
+ul.usa-nav__primary.usa-accordion.usa-nav__primary-global.usa-accordion-global li li{list-style-type:none; line-height:1.2em;}
+.usa-navbar.usa-navbar-global#usa-navbar-global {margin-top:0px; background-image:url('/assets/img/galvin-header-background.png'); background-repeat:no-repeat;}
+#usa-header--extended-global1 {}
+@media (min-width:897px){
+#global-title-services {width: 90%;}    
+#usa-nav__submenu-list-header9{width:25%; margin-right:20px;border-right:1px solid #fff;}
+#usa-nav__submenu-list-header9B{width:30%;}
+}
+@media (max-width:568px){
+div.usa-logo.usa-logo-global#extended-mega-logo{float:left; clear:none; margin-top:0px;margin-bottom:none; width:60%; margin-left:100px;}
+.usa-navbar.usa-navbar-global#usa-navbar-global {}
+}    
+
+@media all and (min-width: 897px){     
+div.usa-logo.usa-logo-global#extended-mega-logo{float:left; clear:none; margin-top:0px;margin-bottom:none; width:60%; margin-left:100px;}
+.usa-logo__text.usa-logo__text-global{color:#000; font-size:23px; margin-left:10px; width:101%; line-height:1em; margin-top:33px;}
+.usa-logo__text.usa-logo__text-global#title-line-2{font-size:20px; margin-top:5px; width:50%; margin-left:10px; color:#000;}
+
+/*form{margin-top:55px;}
+div#search {margin-top:66px!important; clear:both; margin-right:30px; margin-bottom:10px;}*/
+    
+#search{float:right; clear:both; margin-right:30px; margin-top:30px!important; margin-bottom:0px;}
+#search-form{float:right; margin-right:0px; margin-top:30px!important;}   
+.st-default-search-input{margin-top:30px!important;  border-radius:5px; border:solid 1px #000; height:12px; width:190px;}        
+}
+
+    
+    
+@media all and (max-width: 948px) and (min-width: 897px) {   
+.st-default-search-input {margin-right:-20px!important; width:180px!important;}
+div.usa-logo.usa-logo-global#extended-mega-logo {float: left; clear: none; margin-top: 0px; margin-bottom: none; width: 57%; margin-left: 100px;}
+}
+    
+    
+@media all and (max-width: 896px){
+#search{float:left; clear:both; margin-right:30px; margin-top:30px!important; margin-bottom:0px;}
+#search-form{float:left; margin-right:0px; margin-top:30px!important;}   
+.st-default-search-input{margin-top:30px!important; margin-right:0px;border-radius:0px; border:solid 1px #000; height:20px; width:80%;}
+}
+
+@media (min-width: 279px){
+button.usa-accordion__button.usa-nav__link#dds-header-popular span {margin-left: 0px; font-size:15px; font-family:"Source Sans Pro Web", Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;}
+button.usa-accordion__button.usa-nav__link#dds-header-departments span {margin-left: 0px; font-size:15px; font-family:"Source Sans Pro Web", Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;}
+button.usa-accordion__button.usa-nav__link#dds-header-news span {margin-left: 0px; font-size:15px; font-family:"Source Sans Pro Web", Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;}    
+button.usa-accordion__button.usa-nav__link#dds-header-records span {margin-left: 0px; font-size:15px; font-family:"Source Sans Pro Web", Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;}    
+button.usa-accordion__button.usa-nav__link#dds-header-publications span {margin-left: 0px; font-size:15px; font-family:"Source Sans Pro Web", Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;}    
+button.usa-accordion__button.usa-nav__link#dds-header-services span {margin-left: 0px; font-size:15px; font-family:"Source Sans Pro Web", Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;}    
+button.usa-accordion__button.usa-nav__link#dds-header-learning span {margin-left: 0px; font-size:15px; font-family:"Source Sans Pro Web", Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;}    
+button.usa-accordion__button.usa-nav__link#dds-header-about span {margin-left: 0px; font-size:15px; font-family:"Source Sans Pro Web", Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;}      
+}
+    
+/*----------------------------------------------------------------*/
+@media all and (max-width: 896px) and (min-width: 279px) {
+div.usa-logo.usa-logo-global#extended-mega-logo{margin-left:100px;}
+.usa-navbar.usa-navbar-global#usa-navbar-global {margin-top:0px; background-image:url('/assets/img/galvin-header-background.png'); height:100px;}
+.usa-navbar.usa-navbar-global{height:100px;}    
+.usa-logo__text.usa-logo__text-global{color:#000; line-height:1em; margin-top:10px; }
+.usa-logo__text.usa-logo__text-global#title-line-2{color:#000;}
+   
+
+}    
+/*----------------------------------------------------------------*/
+@media all and (max-width: 472px){
+.usa-logo__text.usa-logo__text-global{color:#000; width:93%; line-height:.9em; margin-top:20px; margin-bottom:0px; font-size:19px;}
+.usa-logo__text.usa-logo__text-global#title-line-2{color:#000; width:83%; margin-top:10px; font-size:17px;}
+.usa-logo__text-global span{float:left; margin-left:100px;}    
+.usa-navbar.usa-navbar-global#usa-navbar-global {margin-top:0px; height:100px; background-image:linear-gradient(#47ceff, #f2fbff);}
+.usa-navbar.usa-navbar-global{height:100px;}
+div.usa-logo.usa-logo-global#extended-mega-logo{float:left; clear:none; margin-top:-5px;margin-bottom:none; width:60%; margin-left:-83px;}
+
+}
+/*----------------------------------------------------------------*/    
+    
+@media all and (max-width: 400px){
+div.usa-logo.usa-logo-global#extended-mega-logo{width:69%; margin-left:-82px; margin-right:-12px;}
+.usa-logo__text.usa-logo__text-global{color:#000; width:88%; margin-top:10px; margin-bottom:0px;line-height:.9em; font-size:19px;}
+.usa-logo__text.usa-logo__text-global#title-line-2{color:#000; margin-top:5px; width:80%; font-size:16px;}
+.usa-logo__text-global span{float:left; margin-left:100px;} 
+.usa-navbar.usa-navbar-global#usa-navbar-global{height:100px;}
+.usa-navbar.usa-navbar-global{height:100px;}
+}
+/*----------------------------------------------------------------*/
+       
+ @media all and (max-width: 376px){     
+.usa-logo.usa-logo-global#extended-mega-logo {width:50%; float:left; margin-left:20px; clear:none;}
+      
+
+}
+
+/*----------------------------------------------------------------*/
+@media all and (max-width: 376px){   
+.usa-navbar.usa-navbar-global#usa-navbar-global{height:100px;}   
+    
+}
+    
+@media all and (max-width: 353px){    
+.usa-logo.usa-logo-global#extended-mega-logo {margin-left:10px; clear:none;}
+}
+    
+/*----------------------------------------------------------------*/  
+@media (max-width: 325px){    
+.usa-logo.usa-logo-global#extended-mega-logo {margin-left:0px; clear:none;}    
+}
+    
+/*----------------------------------------------------------------*/  
+@media (max-width: 320px) and (min-width: 279px){
+.usa-logo__text.usa-logo__text-global{color:#000; width:88%; margin-bottom:0px;line-height:.8em; font-size:17px;}
+.usa-logo__text.usa-logo__text-global#title-line-2{color:#000; margin-top:5px; width:80%; font-size:14px;}
+.usa-logo__text-global span{float:left; margin-left:100px;} 
+}    
+    
+    
+/*======================================================================== Added 1/17 ==========================*/
+
+
+@media (min-width: 897px){
+#search {margin-top: -185px!important;}
+
+.usa-megamenu .usa-col {flex: none;width: 30%;}
+
+.usa-megamenu .usa-col {width: 39%;}
+
+#usa-nav__submenu-list-header1, #usa-nav__submenu-list-header3, #usa-nav__submenu-list-header7, #usa-nav__submenu-list-header10 {
+border-right: none;}
+
+#global-title-services, #usa-nav__submenu-list-header7, #global-title-departments3, #global-title-news{border-right:none;}*/
+
+div.division-nav-title span h2 a {margin-top: -25px!important;}
+
+div.division-nav-title span h2  {margin-top: 0px!important;}  
+
+#usa-nav__submenu-list-header1,  #usa-nav__submenu-list-header2,  #usa-nav__submenu-list-header3, #usa-nav__submenu-list-header4, #usa-nav__submenu-list-header5, #usa-nav__submenu-list-header6, #usa-nav__submenu-list-header7, #usa-nav__submenu-list-header8, #usa-nav__submenu-list-header9, #usa-nav__submenu-list-header10 {border-right:0px!important;}   
+#usa-nav__submenu-list-header9 {border-right:0px!important;}
+    
+#global-title-popular1, #global-title-popular2, #global-title-departments1, #global-title-departments2 {border-right: 0px!important;}   
+ .col-sm-4#popular-features1  {border-right: 0px!important;}
+    
+.usa-header--extended .usa-nav__submenu.usa-megamenu {font-size: 15px;} 
+    
+#usa-navbar-global{margin-top:-25px;}
+.usa-nav-global{width:100%;} 
+    
+#global-title-publications,
+#global-title-learning {border-right: none; padding-right:10px;width:34%;}   
+#global-title-learning {width: 34%!important;} 
+#global-title-publications2{padding-right:10px;width:34%;}  
+#global-title-learning2{padding-right:10px;width:34%;} 
+}
+
+
+
+@media (max-width:896px){  
+div.division-nav-title span h2 a {margin-top: 0px!important;}
+
+#search {margin-top: -30px!important;}
+#usa-navbar-global{margin-top:-25px;}
+}
+
+@media (max-width: 896px) and (min-width:279px){
+button.usa-nav__close-global {margin-right: 15px;}
+.usa-logo__text.usa-logo__text-global{color:#000;font-size:20px; margin-top:10px;}
+.usa-logo__text.usa-logo__text-global#title-line-2{color:#000;font-size:17px;} 
+}    
+    
+@media (min-width: 897px) and (min-width: 897px){
+.usa-header--extended .usa-navbar {padding-left: 0px!important; padding-right: 0px!important;}
+}    
+    
+</style>
+
+<header class="usa-header usa-header--extended usa-header-global usa-header--extended-global"  id="usa-header--extended-global1" style="width:100%; padding-top:0px; margin-bottom:0px;">
+	<div class="usa-navbar usa-navbar-global" id="usa-navbar-global" style="width:100%;">
+	  
+        <div class="usa-logo usa-logo-global" id="extended-mega-logo">
+            <a style="outline:none; text-decoration:none;" href="https://www.sec.state.ma.us"><em class="usa-logo__text usa-logo__text-global"><span>Secretary of the Commonwealth of Massachusetts</span></em>
+            <em class="usa-logo__text usa-logo__text-global" id="title-line-2"><span>William Francis Galvin</span></em></a>
+        </div> 
+  		<button class="usa-menu-btn usa-menu-btn-global" id="usa-menu-btn-global">Menu</button>
+	</div> 
+	<nav aria-label="Primary navigation" class="usa-nav usa-nav-global" id="usa-nav-global">
+		<div class="usa-nav__inner usa-nav__inner-global" id="usa-nav__inner-global" style="width:100%;">
+			<button class="usa-nav__close usa-nav__close-global" id="usa-nav__close-global"><img src="/assets/uswds-2_11_2/img/usa-icons/close-white.svg" role="img" alt="" close=""></button>
+                            <ul class="usa-nav__primary usa-accordion usa-nav__primary-global usa-accordion-global"  id="usa-accordion-global">
+                                <li class="usa-nav__primary-item usa-nav__primary-item-global" id="usa-nav__primary-item-header1">
+                                    <button class="usa-accordion__button usa-nav__link usa-accordion__button-global usa-nav__link-global" id="dds-header-popular" aria-expanded="false" aria-controls="extended-mega-nav-section-header-one">
+                                    <img src="/assets/img/global-popular.svg" alt=""><span style="font-size:15px;">Popular Features</span>
+                                        </button>
+                                    <div class="usa-nav__submenu usa-megamenu usa-nav__submenu-global usa-megamenu-global" id="extended-mega-nav-section-header-one" style="box-shadow: 0px 3px 6px #000000a3;">
+                                        <div class="grid-row grid-row-global">
+                                            <div class="usa-col usa-col-global"  id="global-title-popular1" style="margin-bottom:4px;">
+                                                <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header1" style="margin-bottom:0px;" >
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/OVR/Welcome.aspx"><span class="submenu-link">Register to Vote</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/divisions/securities/securities.htm"><span class="submenu-link">Financial Protection</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/cis/cisteachers.htm"><span class="submenu-link">Educational Resources</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/cis/cislevelsofgov/cisstate.htm"><span class="submenu-link">Levels of State Government</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/cis/cishowto.htm#elected"><span class="submenu-link">Find an Elected Official</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="usa-col usa-col-global" id="global-title-popular2">
+                                                <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header2">
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="popular-citizens-guide"><a href="https://www.sec.state.ma.us/cis/ciscig/guide.html"><span class="submenu-link">Citizens Guide to State Services</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/cis/cisholiday.htm"><span class="submenu-link">Holiday Information</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/cis/cisveteran.htm"><span class="submenu-link">Information for Veterans</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/cis/cistel/telidx.htm"><span class="submenu-link">Contact a City or Town Hall</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://corp.sec.state.ma.us/corpweb/CorpSearch/CorpSearch.aspx"><span class="submenu-link">Search the Corporate Database</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="usa-col usa-col-global" id="global-title-popular3">
+                                                <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header2A">
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/trs/trsidx.htm"><span class="submenu-link">State House Tours</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/divisions/elections/voting-information/voters-with-disabilities.htm"><span class="submenu-link">Voters with Disabilities</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/cis/ciscig/guide.html#sectd"><span class="submenu-link">Consumer Information</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>     
+                                <li class="usa-nav__primary-item usa-nav__primary-item-global" id="usa-nav__primary-item-header2">
+                                    <button class="usa-accordion__button usa-nav__link usa-accordion__button-global usa-nav__link-global"  id="dds-header-departments" aria-expanded="false" aria-controls="extended-mega-nav-section-header-two">
+                                        <img src="/assets/img/global-departments.svg" alt=""><span style="font-size:15px;">Departments</span></button>
+                                    <div class="usa-nav__submenu usa-megamenu usa-nav__submenu-global usa-megamenu-global" id="extended-mega-nav-section-header-two" style="box-shadow: 0px 3px 6px #000000a3;"><div class="grid-row grid-row-global">
+                                            <div class="usa-col usa-col-global" id="global-title-departments1" style="border-bottom:0px;">
+                                                <ul class="usa-nav__submenu-list usa-nav__submenu-list-global"  id="usa-nav__submenu-list-header3">
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="departments-acp"><a href="https://www.sec.state.ma.us/divisions/acp/address-confidentiality-program.htm"><span class="submenu-link">Address Confidentiality Program</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="departments-mass-archives"><a href="https://www.sec.state.ma.us/arc/arcidx.htm"><span class="submenu-link">State Archives</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="departments-bookstore"><a href="https://www.sec.state.ma.us/spr/sprcat/catidx.htm"><span class="submenu-link">State House Bookstore</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/cis/cisidx.htm"><span class="submenu-link">Citizen Information Service</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/divisions/commissions/commissions.htm"><span class="submenu-link">Commissions</span></a></li> 
+                                                     
+                                                </ul>
+                                            </div>
+                                            <div class="usa-col usa-col-global" id="global-title-departments2">
+                                                <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header4">
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/mus/index.html" target="_blank"><span class="submenu-link">Commonwealth Museum</span></a> &nbsp; <img src="/assets/img/new-tab.png" style="padding-bottom:3px;" alt=""></li>  
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/divisions/corporations/corporations.htm"><span class="submenu-link">Corporations</span></a></li>                                                     
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/divisions/elections/elections-and-voting.htm"><span class="submenu-link">Elections</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="departments-mass-historical"><a href="https://www.sec.state.ma.us/mhc/mhcidx.htm"><span class="submenu-link">Historical Commission</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/divisions/lobbyist/lobbyist.htm"><span class="submenu-link">Lobbyists</span></a></li>
+                                   
+                                                </ul>
+                                            </div>
+                                             <div class="usa-col usa-col-global" id="global-title-departments3">
+                                                <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header5">
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/divisions/public-records/public-records.htm"><span class="submenu-link">Public Records</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/spr/spridx.htm"><span class="submenu-link">Publications &amp; Regulations</span></a></li>  
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/rod/rodidx.htm"><span class="submenu-link">Registry of Deeds</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/divisions/securities/securities.htm"><span class="submenu-link">Securities</span></a></li>   
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/trs/trsidx.htm"><span class="submenu-link">State House Tours</span></a></li>
+                                                </ul>
+                                            </div>                                        
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="usa-nav__primary-item usa-nav__primary-item-global" id="usa-nav__primary-item-header3">
+                                    <button class="usa-accordion__button usa-nav__link usa-accordion__button-global usa-nav__link-global" id="dds-header-news" aria-expanded="false" aria-controls="extended-mega-nav-section-header-three"><img src="/assets/img/global-news.svg" alt=""><span style="font-size:15px;">News &amp; Events</span></button>
+                                    <div class="usa-nav__submenu usa-megamenu usa-nav__submenu-global usa-megamenu-global" id="extended-mega-nav-section-header-three"  style="border-bottom:1px solid #000; box-shadow: 0px 3px 6px #000000a3;">             
+                                        <div class="grid-row grid-row-global">
+                                            <div class="usa-col usa-col-global" id="global-title-news">
+                                                <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header6">
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="archived-news-stories" style="margin-bottom:8px;"><a href="https://www.sec.state.ma.us/divisions/news/recent-news.htm"><span class="submenu-link">Recent News</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="news-elections"><a href="https://www.sec.state.ma.us/divisions/news/news-archives/archived-news-stories.htm"><span class="submenu-link">Press Releases</span></a></li>
+                                                    <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="press-contact"><a href="https://www.sec.state.ma.us/divisions/news/press-inquiries.htm"><span class="submenu-link">Press Inquiries</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>   
+                                <li class="usa-nav__primary-item usa-nav__primary-item-global" id="usa-nav__primary-item-header4">
+                                    <button class="usa-accordion__button usa-nav__link usa-accordion__button-global usa-nav__link-global" id="dds-header-records" aria-expanded="false" aria-controls="extended-mega-nav-section-header-four">
+                                    <img src="/assets/img/global-records.svg" alt=""><span style="font-size:15px;">Records</span></button>
+                                        <div id="extended-mega-nav-section-header-four" class="usa-nav__submenu usa-megamenu usa-nav__submenu-global usa-megamenu-global"  style="border-bottom:1px solid #000; box-shadow: 0px 3px 6px #000000a3;">
+                                            <div class="grid-row grid-row-global">
+                                                <div class="usa-col usa-col-global" id="global-title-records">
+                                                    <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header7" style="margin-top:4px;">
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="records-preservica" style="line-height:0.8em;"><a href="http://digitalarchives.sec.state.ma.us/"><span class="submenu-link">Digital Archives</span></a> </li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="records-mass-archives" style="line-height:0.8em;"><a href="https://www.sec.state.ma.us/arc/arcrecordsmanagement.htm"><span class="submenu-link">Records Management</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/divisions/public-records/public-records-law/appealing-a-denial.htm"><span class="submenu-link">Public Records Appeals</span></a> </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>   
+                                <li class="usa-nav__primary-item usa-nav__primary-item-global" id="usa-nav__primary-item-header5">
+                                    <button class="usa-accordion__button usa-nav__link usa-accordion__button-global usa-nav__link-global" id="dds-header-publications" aria-expanded="false" aria-controls="extended-mega-nav-section-header-five">
+                                        <img src="/assets/img/global-publications.svg" alt=""><span style="font-size:15px;">Publications</span></button>
+                                        <div class="usa-nav__submenu usa-megamenu usa-nav__submenu-global usa-megamenu-global" id="extended-mega-nav-section-header-five"  style="border-bottom:1px solid #000; box-shadow: 0px 3px 6px #000000a3;">
+                                            <div class="grid-row grid-row-global">
+                                                <div class="usa-col usa-col-global" id="global-title-publications">
+                                                    <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header8" style="border-right:none;">
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="elections-pub"><a href="https://www.sec.state.ma.us/CalendarWeb/Pages/MonthWeekCalendar.aspx"><span class="submenu-link">Election Deadline Calendar</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="citizen-info-service-pub" style="line-height:0.8em;"><a href="https://www.sec.state.ma.us/cis/cispublications.htm"><span class="submenu-link">Citizen Information Service Publications</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="historical-pub" style="line-height:1.5em;"><a href="https://www.sec.state.ma.us/mhc/mhcpub/pubidx.htm"><span class="submenu-link">Massachusetts Historical Commission Publications</span></a></li>
+
+                                                    </ul>
+                                                </div>                                             
+                                                <div class="usa-col usa-col-global" id="global-title-publications2">
+                                                    <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header8B" style="border-right:none;">
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="cis-pub-notice" style="line-height:1.5em;"><a href="https://www.sec.state.ma.us/divisions/public-notices/public-notices.htm"><span class="submenu-link">Public Notices</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="pubs-regs-pub" style="line-height:1.5em;"><a href="https://www.sec.state.ma.us/spr/spridx.htm"><span class="submenu-link">Publications from the Publications &amp; Regulations Division</span></a></li> 
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="cis-publications" style="line-height:1.5em; color:#fff;"><a href="https://www.sec.state.ma.us/cis/cispublications.htm"><span class="submenu-link">Publications from the Citizen Information Service Commission</span></a></li>
+                                                    </ul>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="usa-nav__primary-item usa-nav__primary-item-global" id="usa-nav__primary-item-header6">
+                                    <button class="usa-accordion__button usa-nav__link usa-accordion__button-global usa-nav__link-global" id="dds-header-services" aria-expanded="false" aria-controls="extended-mega-nav-section-header-six">
+                                        <img src="/assets/img/global-services.svg" alt=""><span style="font-size:15px;">Services</span></button>
+                                        <div class="usa-nav__submenu usa-megamenu usa-nav__submenu-global usa-megamenu-global" id="extended-mega-nav-section-header-six" style="padding-top:1.8rem; border-bottom:1px solid #000; box-shadow: 0px 3px 6px #000000a3;">
+                                            <div class="grid-row grid-row-global">
+                                                <div class="usa-col usa-col-global" id="global-title-services">
+                                                    <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header9">
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="citizens-guide-services" style="line-height:0.8em;"><a href="https://www.sec.state.ma.us/trs/trsidx.htm"><span class="submenu-link">State House Tours</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="corporations-services"><a href="https://www.sec.state.ma.us/cis/cisidx.htm"><span class="submenu-link">Citizen Information Service</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="voter-registration-services" style="line-height:0.8em;"><a href="https://www.sec.state.ma.us/OVR/Welcome.aspx"><span class="submenu-link">Voter Registration</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="solemnization-services" style="line-height:0.8em;"><a href="https://www.sec.state.ma.us/OneDayWeb/External/Welcome.aspx"><span class="submenu-link">One Day Solemnzation</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="oaths-services" style="line-height:0.8em;"><a href="https://www.sec.state.ma.us/divisions/commissions/notary-information.htm"><span class="submenu-link">Oaths of Office</span></a></li>
+                                                    </ul>
+                                                    <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header9B">  
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="lobbyist-services" style="line-height:0.8em;"><a href="https://www.sec.state.ma.us/LobbyistPublicSearch/Default.aspx"><span class="submenu-link">Lobbyist Public Search</span></a></li>                                                        
+                                                         <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="corporate-filings-services" style="line-height:0.8em;"><a href="https://www.sec.state.ma.us/divisions/corporations/corporations.htm#filing-methods"><span class="submenu-link">Corporate Filings</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="appeal-services" style="line-height:0.8em;"><a href="https://www.sec.state.ma.us/divisions/public-records/public-records-law/appealing-a-denial.htm"><span class="submenu-link">Appeal a Public Records Denial</span></a></li>                                                         
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="good-standing" style="line-height:0.8em;"><a style="color:#fff;" href="https://corp.sec.state.ma.us/CorpWeb/Certificates/CertificateOrderForm.aspx">Certificates of Good Standing</a></li>
+                                                        
+                                                    </ul>                                                    
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </li>               
+                                    <li class="usa-nav__primary-item usa-nav__primary-item-global" id="usa-nav__primary-item-header7">
+                                    <button class="usa-accordion__button usa-nav__link usa-accordion__button-global usa-nav__link-global" id="dds-header-learning" aria-expanded="false" aria-controls="extended-mega-nav-section-header-seven">
+                                        <img src="/assets/img/global-learning.svg" alt=""><span style="font-size:15px;">Learning</span></button>
+                                        <div class="usa-nav__submenu usa-megamenu usa-nav__submenu-global usa-megamenu-global" id="extended-mega-nav-section-header-seven"  style="border-bottom:1px solid #000; box-shadow: 0px 3px 6px #000000a3;">
+                                            <div class="grid-row grid-row-global">
+                                                <div class="usa-col usa-col-global" id="global-title-learning">
+                                                    <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header10">
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/trs/trsdidyouknow/did-you-know.htm"><span class="submenu-link">Did You Know?</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="History-learning"><a href="https://www.sec.state.ma.us/cis/cishistory.htm"><span class="submenu-link">History of Massachusetts</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="Archaeology-learning"><a href="https://www.sec.state.ma.us/mhc/mhcarch/archidx.htm"><span class="submenu-link">Archaeology Resources for Teachers and Students</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="usa-col usa-col-global" id="global-title-learning2">
+                                                    <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header10B">
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="statehouse-tours"><a href="https://www.sec.state.ma.us/trs/trsidx.htm"><span class="submenu-link">State House Tours</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global" id="museum"><a href="https://www.sec.state.ma.us/mus/index.html"><span class="submenu-link">Commonwealth Museum</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/cis/cisteachers.htm"><span class="submenu-link">Find Educational Resources</span></a></li>
+                                                    </ul>
+                                                </div>                                                 
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="usa-nav__primary-item usa-nav__primary-item-global" id="usa-nav__primary-item-header8">
+                                    <button class="usa-accordion__button usa-nav__link usa-accordion__button-global usa-nav__link-global" id="dds-header-about" aria-expanded="false" aria-controls="extended-mega-nav-section-header-eight">
+                                        <img src="/assets/img/global-about.svg" alt=""><span style="font-size:15px;">About Us</span></button>
+                                        <div class="usa-nav__submenu usa-megamenu usa-nav__submenu-global usa-megamenu-global" id="extended-mega-nav-section-header-eight" style="padding-bottom:0rem; border-bottom:1px solid #000; box-shadow: 0px 3px 6px #000000a3; height:144px;">
+                                            <div class="grid-row grid-row-global">
+                                                <div class="usa-col usa-col-global" id="global-title-about">
+                                                    <ul class="usa-nav__submenu-list usa-nav__submenu-list-global" id="usa-nav__submenu-list-header12">
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/divisions/regional-offices/regional-offices.htm"><span class="submenu-link">Locations</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/seccareers.htm"><span class="submenu-link">Careers</span></a></li>
+                                                        <li class="usa-nav__submenu-item usa-nav__submenu-item-global"><a href="https://www.sec.state.ma.us/divisions/about-us/contact-us.htm"><span class="submenu-link">Contact Us</span></a></li>
+                                                    </ul>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </li>               
+                                </ul>
+            
+            
+<!---------------------------------------------------------------- David added stuff from here ------------------------------------------------->            
+
+<!---------------------------------- SEARCHBAR ------------------------------------->       
+<div id="search" role="search" aria-label="Search field">
+      <form id="search-form">
+      <input type="text"  class="st-default-search-input">
+      </form>   
+  </div>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','yhM-dJN9ivmq2ByN21Yn','2.0.0');
+</script>
+<!------------------------------ END NEW SEARCHBAR ---------------------------------->
+
+      </div>
+
+  </nav>
+</header>
+<style>
+li li{list-style-type:circle;}
+li{list-style-type:disc;}
+</style>
+
+		<div id="wrapper">
+			<script type="text/javascript">
+$(document).ready(function(){
+	var url = window.location.href;
+	//Lobbyist
+	if (url.toLowerCase().indexOf("/lobbyistweb/") >= 0 || url.toLowerCase().indexOf("/lobbyistpublicsearch/") >= 0) {
+			//alert(url);
+			$("#divisionnavbar").load("/app-local-nav/lobbyist-navbar.htm");
+    	}
+	//Elections
+    else if (url.toLowerCase().indexOf("/ovr/") >= 0 || url.toLowerCase().indexOf("/wheredoivotema/") >= 0 || url.toLowerCase().indexOf("/voterregistrationsearch/") >= 0 || url.toLowerCase().indexOf("/earlyvotingweb/") >= 0 || url.toLowerCase().indexOf("/calendarweb/") >= 0 || url.toLowerCase().indexOf("/mailinrequestweb/") >= 0) {
+    		$("#divisionnavbar").load("/app-local-nav/elections-navbar.htm");
+    	}
+	//Public Records
+	else if (url.toLowerCase().indexOf("/agencyraoweb/") >= 0 || url.toLowerCase().indexOf("/requestsearchweb/") >= 0 || url.toLowerCase().indexOf("/appealsweb/") >= 0) {
+    		$("#divisionnavbar").load("/app-local-nav/pub-records-navbar.htm");
+    	}
+	//Commissions
+	else if (url.toLowerCase().indexOf("/onedayweb/") >= 0) {
+    		$("#divisionnavbar").load("/app-local-nav/commissions.htm");
+    	}	
+	//Archives
+	else if (url.toLowerCase().indexOf("/archivessearch/") >= 0 || url.toLowerCase().indexOf("/vitalrecordssearch/") >= 0) {
+    		$("#divisionnavbar").load("/app-local-nav/mass-archives-navbar.htm");
+    	}
+	//Census
+	else if (url.toLowerCase().indexOf("/census/") >= 0 || url.toLowerCase().indexOf("/censusweb/") >= 0) {
+    		$("#divisionnavbar").load("/app-local-nav/census-navbar.htm");
+    	}
+	//Securities
+	else if (url.toLowerCase().indexOf("/investorcomplaint/") >= 0 || url.toLowerCase().indexOf("/riceweb/") >= 0 || url.toLowerCase().indexOf("/securities/") >= 0) {
+    		$("#divisionnavbar").load("/app-local-nav/securities-navbar.htm");
+    	}
+	//Pubs & Regs
+	else if (url.toLowerCase().indexOf("/publicationsubscriptionpublic/") >= 0 || url.toLowerCase().indexOf("/reg_pub/") >= 0 || url.toLowerCase().indexOf("/reg_pub_newuser/") >= 0 || url.toLowerCase().indexOf("/sprpublicforms/") >= 0 || url.toLowerCase().indexOf("/massregister/") >= 0) {
+    		$("#divisionnavbar").load("/app-local-nav/pub-and-reg-navbar.htm");
+    	}
+	//Corp
+	else if (url.toLowerCase().indexOf("/corpweb/") >= 0 || url.toLowerCase().indexOf("/corppaymentweb/") >= 0) {
+    		$("#divisionnavbar").load("/app-local-nav/corporations-navbar.htm");
+		}
+	//Bookstore (corp page but its used for pubs&regs)
+	else if (url.toLowerCase().indexOf("/bookstoreweb/") >= 0) {
+    		$("#divisionnavbar").load("/app-local-nav/pub-and-reg-navbar.htm");
+		}
+	//CNS
+	else if (url.toLowerCase().indexOf("cns.masslandrecords.com") >= 0) {
+    		$("#divisionnavbar").load("/app-local-nav/registry-navbar.htm");
+		}
+});
+</script>
+<div id="divisionnavbar">
+	<!-- Division nav bar content -->
+</div> <header class="local-header">
+      <div class="local-menu-btn">
+        <div class="local-menu-btn__lines"></div>
+      </div>
+      <ul class="local-menu-items" style="height:auto; display:block;">
+<!-------------------------------------------------------------------------------------------------------------->
+                <li><a href="/divisions/acp/address-confidentiality-program.htm" class="local-menu-item">Address Confidentiality Program (ACP)</a></li>
+<!-------------------------------------------------------------------------------------------------------------->
+                <li><a href="/arc/arcrec/recabtidx.htm" class="local-menu-item">Agency Records Center</a></li>
+<!-------------------------------------------------------------------------------------------------------------->
+                <li><a href="/arc/arcidx.htm" class="local-menu-item">Archives Division</a></li>
+<!-------------------------------------------------------------------------------------------------------------->
+                <li><a href="/census2020/index.htm" class="local-menu-item" target="_new">Census</a></li>
+<!-------------------------------------------------------------------------------------------------------------->
+  	        <li><a href="/cis/cisidx.htm" class="local-menu-item">Citizen Information Service</a></li>
+<!------------------------------------------------------------------------------------------------------------------>		 
+                <li><a href="/mus/index.html" class="local-menu-item" target="_new">Commonwealth Museum</a></li>
+<!-------------------------------------------------------------------------------------------------------------->		  
+  		<li><a href="/divisions/corporations/corporations.htm" class="local-menu-item">Corporations Division</a></li>
+<!-------------------------------------------------------------------------------------------------------------->		  
+  		<li><a href="/divisions/elections/elections-and-voting.htm" class="local-menu-item">Elections Division</a></li>
+<!-------------------------------------------------------------------------------------------------------------->
+                <li><a href="/mhc/mhcidx.htm" class="local-menu-item">Historical Commission</a></li>
+<!-------------------------------------------------------------------------------------------------------------->
+		<li><a href="/divisions/lobbyist/lobbyist.htm" class="local-menu-item">Lobbyist Division</a></li>
+<!-------------------------------------------------------------------------------------------------------------->		  
+  		<li><a href="/pre/preidx.htm" class="local-menu-item">Public Records Division</a></li>
+<!------------------------------------------------------------------------------------------------------------------>	  
+                <li><a href="/spr/spridx.htm" class="local-menu-item">Publications and<br/>Regulations / Bookstore</a></li>
+<!-------------------------------------------------------------------------------------------------------------->
+                <li><a href="/divisions/regional-offices/regional-offices.htm" class="local-menu-item">Regional Offices</a></li>
+<!-------------------------------------------------------------------------------------------------------------->		  
+  		<li><a href="/rod/rodidx.htm" class="local-menu-item">Registry of Deeds</a></li>
+<!-------------------------------------------------------------------------------------------------------------->		  
+  		<li><a href="/divisions/securities/securities.htm" class="local-menu-item">Securities Division</a></li>
+<!-------------------------------------------------------------------------------------------------------------->
+		<li><a href="/trs/trsidx.htm" class="local-menu-item">State House Tours</a></li>
+<!-------------------------------------------------------------------------------------------------------------->
+
+      </ul>
+    </header>
+
+<form method="post" action="./" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE4NDg1NzYyOTAPZBYCZg9kFgICBw9kFgICAQ9kFg4CEw9kFggCBQ8QDxYGHg1EYXRhVGV4dEZpZWxkBQVUaXRsZR4ORGF0YVZhbHVlRmllbGQFC1JlZ1BlcmlvZElkHgtfIURhdGFCb3VuZGdkEBUTBDIwMDUEMjAwNgQyMDA3BDIwMDgEMjAwOQQyMDEwBDIwMTEEMjAxMgQyMDEzBDIwMTQEMjAxNQQyMDE2BDIwMTcEMjAxOAQyMDE5BDIwMjAEMjAyMQQyMDIyBDIwMjMVEwQyMDA1BDIwMDYEMjAwNwQyMDA4BDIwMDkEMjAxMAQyMDExBDIwMTIEMjAxMwQyMDE0BDIwMTUEMjAxNgQyMDE3BDIwMTgEMjAxOQQyMDIwBDIwMjEEMjAyMgQyMDIzFCsDE2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2cWAQISZAIJDw9kFgIeCW9ua2V5ZG93bgWxAmlmKChldmVudC53aGljaCAmJiBldmVudC53aGljaCA9PSAxMykgfHwgKGV2ZW50LmtleUNvZGUgJiYgZXZlbnQua2V5Q29kZSA9PSAxMykpe3ZhciBjb250cm9scyA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdpbnB1dCcpO2ZvciAodmFyIGkgPSAwOyBpIDwgY29udHJvbHMubGVuZ3RoOyBpKyspe2lmIChjb250cm9sc1tpXS5pZC5pbmRleE9mKCdidG5TZWFyY2gnKSA+IC0xKXtkb2N1bWVudC5nZXRFbGVtZW50QnlJZChjb250cm9sc1tpXS5pZCkuY2xpY2soKTtyZXR1cm4gZmFsc2U7fX19ZWxzZXtyZXR1cm4gdHJ1ZTt9ZAIND2QWAmYPEA8WBh8ABQtEaXNwbGF5TmFtZR8BBQRDb2RlHwJnZBAVAwtFeGFjdCBNYXRjaAtCZWdpbnMgV2l0aBFDb250YWlucyBBbnl3aGVyZRUDATEBMgEzFCsDA2dnZxYBAgJkAhEPEA8WBh8ABQtEaXNwbGF5TmFtZR8BBQRDb2RlHwJnZBAVJCJBZ3JpY3VsdHVyZSwgRm9yZXN0cnksIGFuZCBGaXNoaW5nE0F1dG9tb3RpdmUgSW5kdXN0cnkcQmFua2luZzogTGVuZGluZywgSW52ZXN0bWVudCRCdXNpbmVzcyBBc3NvY2lhdGlvbnMsIE9yZ2FuaXphdGlvbnMNQ29tbXVuaWNhdGlvbhtDb250cmFjdG9ycywgU3ViY29udHJhY3RvcnMJRWR1Y2F0aW9uJkVuZXJneTogUGV0cm9sZXVtLCBIeWRybywgTnVjbGVhciwgT2lsDUVudGVydGFpbm1lbnQLRW52aXJvbm1lbnQfRmluYW5jZSwgSW5zdXJhbmNlLCBSZWFsIEVzdGF0ZShGb29kIGFuZCBCZXZlcmFnZTogSW5kdXN0cnkgYW5kIFNlcnZpY2VzBkdhbWluZyxHb3YndDogQWdlbmNpZXMsIEFzc29jaWF0aW9ucywgT3JnYW5pemF0aW9ucwpIZWFsdGhjYXJlD0hpZ2ggVGVjaG5vbG9neStIb3NwaXRhbHM6IEhlYWx0aGNhcmUgU3lzdGVtcywgTWVkaWNhbCBPcmdzDkh1bWFuIFNlcnZpY2VzFkluZm9ybWF0aW9uIFRlY2hub2xvZ3kiSW5zdXJhbmNlOiBBdXRvLCBIb21lLCBMaWZlLCBPdGhlcilJbnN1cmFuY2U6IE1lZGljYWwsIERlbnRhbCwgTWVudGFsIEhlYWx0aBJMYWJvciBVbmlvbnM6IFBBQ3MdTGVnYWwgT3JnYW5pemF0aW9ucywgU2VydmljZXMWTG9iYnlpbmcgT3JnYW5pemF0aW9ucw1NYW51ZmFjdHVyaW5nCU1hcmlqdWFuYQVPdGhlchdQaGFybWFjZXV0aWNhbCBJbmR1c3RyeStQb2xpY2UsIEZpcmUsIExhdyBFbmZvcmNlbWVudCBPcmdhbml6YXRpb25zJVJlYWwgRXN0YXRlOiBEZXZlbG9wbWVudCBhbmQgUHJvcGVydHkPU29jaWFsIFNlcnZpY2VzEFRvYmFjY28sIEFsY29ob2waVHJhZGU6IFdob2xlc2FsZSBvciBSZXRhaWwOVHJhbnNwb3J0YXRpb24eVHJhdmVsLCBUb3VyaXNtLCBFbnRlcnRhaW5tZW50CVV0aWxpdGllcxUkAjIyATEBMgEzAjMzATQCMzACMTUCMjgCMzICMzYBNQIyNgE2AjI1ATgBNwE5AjM0AjE0AjEwAjExAjEyAjEzAjIzAjI3AjIwAjE2AjE3AjE5AjI5AjIxAjM1AjI0AjE4AjMxFCsDJGdnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZxYBZmQCFQ9kFhACAQ8PFgIeBFRleHRlZGQCBQ8QDxYGHwAFBVRpdGxlHwEFC1JlZ1BlcmlvZElkHwJnZBAVEwQyMDA1BDIwMDYEMjAwNwQyMDA4BDIwMDkEMjAxMAQyMDExBDIwMTIEMjAxMwQyMDE0BDIwMTUEMjAxNgQyMDE3BDIwMTgEMjAxOQQyMDIwBDIwMjEEMjAyMgQyMDIzFRMEMjAwNQQyMDA2BDIwMDcEMjAwOAQyMDA5BDIwMTAEMjAxMQQyMDEyBDIwMTMEMjAxNAQyMDE1BDIwMTYEMjAxNwQyMDE4BDIwMTkEMjAyMAQyMDIxBDIwMjIEMjAyMxQrAxNnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnFgECEmQCBw8QDxYCHgdDaGVja2VkZ2RkZGQCCQ8PFgIfBAUSRW50ZXIgYmlsbCBudW1iZXI6ZGQCCw8PFgIfBGUWAh8DBbECaWYoKGV2ZW50LndoaWNoICYmIGV2ZW50LndoaWNoID09IDEzKSB8fCAoZXZlbnQua2V5Q29kZSAmJiBldmVudC5rZXlDb2RlID09IDEzKSl7dmFyIGNvbnRyb2xzID0gZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ2lucHV0Jyk7Zm9yICh2YXIgaSA9IDA7IGkgPCBjb250cm9scy5sZW5ndGg7IGkrKyl7aWYgKGNvbnRyb2xzW2ldLmlkLmluZGV4T2YoJ2J0blNlYXJjaCcpID4gLTEpe2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKGNvbnRyb2xzW2ldLmlkKS5jbGljaygpO3JldHVybiBmYWxzZTt9fX1lbHNle3JldHVybiB0cnVlO31kAg0PZBYCAgMPDxYCHwRlFgIfAwWxAmlmKChldmVudC53aGljaCAmJiBldmVudC53aGljaCA9PSAxMykgfHwgKGV2ZW50LmtleUNvZGUgJiYgZXZlbnQua2V5Q29kZSA9PSAxMykpe3ZhciBjb250cm9scyA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdpbnB1dCcpO2ZvciAodmFyIGkgPSAwOyBpIDwgY29udHJvbHMubGVuZ3RoOyBpKyspe2lmIChjb250cm9sc1tpXS5pZC5pbmRleE9mKCdidG5TZWFyY2gnKSA+IC0xKXtkb2N1bWVudC5nZXRFbGVtZW50QnlJZChjb250cm9sc1tpXS5pZCkuY2xpY2soKTtyZXR1cm4gZmFsc2U7fX19ZWxzZXtyZXR1cm4gdHJ1ZTt9ZAIPD2QWBgIBDxAPFgIfBWhkZGRkAgUPEA8WCB8ABQtEaXNwbGF5TmFtZR8BBQRDb2RlHwJnHgdFbmFibGVkaGQQFeEBA0FsbC1BbGNvaG9saWMgQmV2ZXJhZ2VzIENvbnRyb2wgQ29tbWlzc2lvbiAoQUJDQykgQXJjaGl0ZWN0dXJhbCBBY2Nlc3MgQm9hcmQgKEFBQikfQXR0b3JuZXkgR2VuZXJhbCdzIE9mZmljZSAoQUdPKRhBdHRvcm5leSBHZW5lcmFscyBPZmZpY2UiQmFybnN0YWJsZSBDb3VudHkgU2hlcmlmZidzIE9mZmljZSFCZXJrc2hpcmUgQ291bnR5IFNoZXJpZmYncyBPZmZpY2UbQmVya3NoaXJlIERpc3RyaWN0IEF0dG9ybmV5LUJlcmtzaGlyZSBSZWdpb25hbCBQbGFubmluZyBDb21taXNzaW9uIChCUlBDKTJCb2FyZCBvZiBCdWlsZGluZyBSZWd1bGF0aW9ucyBhbmQgU3RhbmRhcmRzIChCQlJTKSlCb2FyZCBvZiBDZXJ0aWZpY2F0aW9uIG9mIEhlYWx0aCBPZmZpY2Vyc0FCb2FyZCBvZiBDZXJ0aWZpY2F0aW9uIG9mIFdhc3Rld2F0ZXIgVHJlYXRtZW50IEZhY2lsaXR5IE9wZXJhdG9ycx9Cb2FyZCBvZiBIaWdoZXIgRWR1Y2F0aW9uIChCSEUpJUJvYXJkIG9mIExpYnJhcnkgQ29tbWlzc2lvbmVycyAoTUJMQykbQm9hcmQgb2YgUHVibGljIEFjY291bnRhbmN5NEJvYXJkIG9mIFJlZ2lzdHJhdGlvbiBpbiBBbGxpZWQgSGVhbHRoIFByb2Zlc3Npb25hbHNMQm9hcmQgb2YgUmVnaXN0cmF0aW9uIGluIEFsbGllZCBNZW50YWwgSGVhbHRoIGFuZCBIdW1hbiBTZXJ2aWNlcyBQcm9mZXNzaW9ucyJCb2FyZCBvZiBSZWdpc3RyYXRpb24gaW4gRGVudGlzdHJ5UUJvYXJkIG9mIFJlZ2lzdHJhdGlvbiBpbiBNZWRpY2luZSAoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKSBCb2FyZCBvZiBSZWdpc3RyYXRpb24gaW4gTnVyc2luZyJCb2FyZCBvZiBSZWdpc3RyYXRpb24gaW4gT3B0b21ldHJ5IUJvYXJkIG9mIFJlZ2lzdHJhdGlvbiBpbiBQaGFybWFjeSxCb2FyZCBvZiBSZWdpc3RyYXRpb24gaW4gVmV0ZXJpbmFyeSBNZWRpY2luZSNCb2FyZCBvZiBSZWdpc3RyYXRpb24gb2YgQXJjaGl0ZWN0cyZCb2FyZCBvZiBSZWdpc3RyYXRpb24gb2YgQ2hpcm9wcmFjdG9ycyRCb2FyZCBvZiBSZWdpc3RyYXRpb24gb2YgQ29zbWV0b2xvZ3ktQm9hcmQgb2YgUmVnaXN0cmF0aW9uIG9mIERpc3BlbnNpbmcgT3B0aWNpYW5zOEJvYXJkIG9mIFJlZ2lzdHJhdGlvbiBvZiBGdW5lcmFsIERpcmVjdG9ycyBhbmQgRW1iYWxtZXJzb0JvYXJkIG9mIFJlZ2lzdHJhdGlvbiBvZiBIYXphcmRvdXMgV2FzdGUgU2l0ZSBDbGVhbnVwIFByb2Zlc3Npb25hbHMgKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgRW52aXJvbm1lbnRhbCBBZmZhaXJzKShCb2FyZCBvZiBSZWdpc3RyYXRpb24gb2YgSG9tZSBJbnNwZWN0b3JzRkJvYXJkIG9mIFJlZ2lzdHJhdGlvbiBvZiBPcGVyYXRvcnMgb2YgRHJpbmtpbmcgV2F0ZXIgU3VwcGx5IEZhY2lsaXRpZXNPQm9hcmQgb2YgUmVnaXN0cmF0aW9uIG9mIFByb2Zlc3Npb25hbCBFbmdpbmVlcnMgYW5kIFByb2Zlc3Npb25hbCBMYW5kIFN1cnZleW9ycyZCb2FyZCBvZiBSZWdpc3RyYXRpb24gb2YgUHN5Y2hvbG9naXN0cy9Cb2FyZCBvZiBSZWdpc3RyYXRpb24gb2YgUmVhbCBFc3RhdGUgQXBwcmFpc2VycztCb2FyZCBvZiBSZWdpc3RyYXRpb24gb2YgUmVhbCBFc3RhdGUgQnJva2VycyAmIFNhbGVzcGVyc29ucyRCb2FyZCBvZiBSZWdpc3RyYXRpb24gb2YgU29jaWFsIFdvcms0Qm9hcmQgb2YgU3RhdGUgRXhhbWluZXJzIG9mIFBsdW1iZXJzIGFuZCBHYXMgRml0dGVycyZCcmlzdG9sIENvdW50eSBTaGVyaWZmJ3MgT2ZmaWNlIChCQ1NPKRlCcmlzdG9sIERpc3RyaWN0IEF0dG9ybmV5JkJ1cmVhdSBvZiBTdGF0ZSBPZmZpY2UgQnVpbGRpbmdzIChCU0IpG0Nhbm5hYmlzIENvbnRyb2wgQ29tbWlzc2lvbiJDYXBlIGFuZCBJc2xhbmRzIERpc3RyaWN0IEF0dG9ybmV5MUNlbnRlciBmb3IgSGVhbHRoIEluZm9ybWF0aW9uIGFuZCBBbmFseXNpcyAoQ0hJQSk6Q2VudHJhbCBNYXNzYWNodXNldHRzIFJlZ2lvbmFsIFBsYW5uaW5nIENvbW1pc3Npb24gKENNUlBDKR5DaXZpbCBTZXJ2aWNlIENvbW1pc3Npb24gKENTQykxQ29tbW9ud2VhbHRoIEhlYWx0aCBJbnN1cmFuY2UgQ29ubmVjdG9yIEF1dGhvcml0eT1Db21tdW5pdHkgRWNvbm9taWMgRGV2ZWxvcG1lbnQgQXNzaXN0YW5jZSBDb3Jwb3JhdGlvbiAoQ0VEQUMpJUNvbXB0cm9sbGVyIG9mIHRoZSBDb21tb253ZWFsdGggKENUUikrRGVwYXJ0bWVudCBvZiBBZ3JpY3VsdHVyYWwgUmVzb3VyY2VzIChNREFSKSNEZXBhcnRtZW50IG9mIENoaWxkcmVuIGFuZCBGYW1pbGllcylEZXBhcnRtZW50IG9mIENvbnNlcnZhdGlvbiBhbmQgUmVjcmVhdGlvbh5EZXBhcnRtZW50IG9mIENvcnJlY3Rpb24gKERPQyksRGVwYXJ0bWVudCBvZiBFbnZpcm9ubWVudGFsIFByb3RlY3Rpb24gKERFUCkdRGVwYXJ0bWVudCBvZiBMYWJvciBTdGFuZGFyZHMhRGVwYXJ0bWVudCBvZiBNZW50YWwgSGVhbHRoIChETUgpIURlcGFydG1lbnQgb2YgUHVibGljIEhlYWx0aCAoRFBIKTBEZXBhcnRtZW50IG9mIFB1YmxpYyBTYWZldHksIE1hc3NhY2h1c2V0dHMgKERQUylbRGVwYXJ0bWVudCBvZiBQdWJsaWMgVXRpbGl0aWVzIChEUFUpIChFeGVjdXRpdmUgT2ZmaWNlIG9mIEVuZXJneSBhbmQgRW52aXJvbm1lbnRhbCBBZmZhaXJzKRtEZXBhcnRtZW50IG9mIFJldmVudWUgKERPUilLRGVwYXJ0bWVudCBvZiBTdGF0ZSBQb2xpY2UgKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgUHVibGljIFNhZmV0eSBhbmQgU2VjdXJpdHkpWkRlcGFydG1lbnQgb2YgVGVsZWNvbW11bmljYXRpb25zIGFuZCBDYWJsZSAoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKVtEZXBhcnRtZW50IG9mIFRyYW5zaXRpb25hbCBBc3Npc3RhbmNlIChEVEEpIChFeGVjdXRpdmUgT2ZmaWNlIG9mIEhlYWx0aCBhbmQgSHVtYW4gU2VydmljZXMpYURlcGFydG1lbnQgb2YgVW5lbXBsb3ltZW50IEFzc2lzdGFuY2UgKERVQSkgKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgTGFib3IgYW5kIFdvcmtmb3JjZSBEZXZlbG9wbWVudClPRGVwYXJ0bWVudCBvZiBWZXRlcmFucyBTZXJ2aWNlcyAoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKVFEZXBhcnRtZW50IG9mIFlvdXRoIFNlcnZpY2VzIChEWVMpKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgSGVhbHRoIGFuZCBIdW1hbiBTZXJ2aWNlcyksRGVwYXJ0bWVudHMgb2YgVW5lbXBsb3ltZW50IEFzc2lzdGFuY2UgKERVQSlPRGVzaWduZXIgU2VsZWN0aW9uIEJvYXJkIChEaXZpc2lvbiBvZiBDYXBpdGFsIEFzc2V0IE1hbmFnZW1lbnQgYW5kIE1haW50ZW5hbmNlKRxEZXZlbnMgRW50ZXJwcmlzZSBDb21taXNzaW9uLURpc2FibGVkIFBlcnNvbnMgUHJvdGVjdGlvbiBDb21taXNzaW9uIChEUFBDKRdEaXZpc2lvbiBvZiBCYW5rcyAoRE9CKW5EaXZpc2lvbiBvZiBDYXBpdGFsIEFzc2V0IE1hbmFnZW1lbnQgYW5kIE1haW50ZW5hbmNlIChEQ0FNTSkgKEV4ZWN1dGl2ZSBPZmZpY2UgZm9yIEFkbWluaXN0cmF0aW9uIGFuZCBGaW5hbmNlKUVEaXZpc2lvbiBvZiBJbnN1cmFuY2UgKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgSGVhbHRoIGFuZCBIdW1hbiBTZXJ2aWNlcykoRGl2aXNpb24gb2YgUHJvZmVzc2lvbmFsIExpY2Vuc3VyZSAoRFBMKR1EdWtlcyBDb3VudHkgU2hlcmlmZidzIE9mZmljZSFFc3NleCBDb3VudHkgU2hlcmlmZidzIERlcGFydG1lbnQXRXNzZXggRGlzdHJpY3QgQXR0b3JuZXk1RXhlY3V0aXZlIE9mZmljZSBmb3IgQWRtaW5pc3RyYXRpb24gYW5kIEZpbmFuY2UgKEFORikjRXhlY3V0aXZlIE9mZmljZSBvZiBFZHVjYXRpb24gKEVEVSlYRXhlY3V0aXZlIE9mZmljZSBvZiBFbGRlciBBZmZhaXJzIChFT0VBKSAoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKTpFeGVjdXRpdmUgT2ZmaWNlIG9mIEVuZXJneSBhbmQgRW52aXJvbm1lbnRhbCBBZmZhaXJzIChFRUEpKUV4ZWN1dGl2ZSBPZmZpY2Ugb2YgRW52aXJvbm1lbnRhbCBBZmZhaXJzNUV4ZWN1dGl2ZSBPZmZpY2Ugb2YgSGVhbHRoIGFuZCBIdW1hbiBTZXJ2aWNlcyAoRU9ISFMpa0V4ZWN1dGl2ZSBPZmZpY2Ugb2YgSG91c2luZyBhbmQgRWNvbm9taWMgRGV2ZWxvcG1lbnQgKEVPSEVEKShFeGVjdXRpdmUgT2ZmaWNlIG9mIEhlYWx0aCBhbmQgSHVtYW4gU2VydmljZXMpO0V4ZWN1dGl2ZSBPZmZpY2Ugb2YgTGFib3IgYW5kIFdvcmtmb3JjZSBEZXZlbG9wbWVudCAoRU9MV0QpNkV4ZWN1dGl2ZSBPZmZpY2Ugb2YgUHVibGljIFNhZmV0eSBhbmQgU2VjdXJpdHkgKEVPUFNTKW5FeGVjdXRpdmUgT2ZmaWNlIG9mIFRlY2hub2xvZ3kgU2VydmljZXMgYW5kIFNlY3VyaXR5IChFT1RTUykgKEV4ZWN1dGl2ZSBPZmZpY2UgZm9yIEFkbWluaXN0cmF0aW9uIGFuZCBGaW5hbmNlKTNFeGVjdXRpdmUgT2ZmaWNlIG9mIFRyYW5zcG9ydGF0aW9uIGFuZCBQdWJsaWMgV29ya3MgRnJhbmtsaW4gQ291bnR5IFNoZXJpZmYncyBPZmZpY2URR292ZXJub3JzIENvdW5jaWxSR3JvdXAgSW5zdXJhbmNlIENvbW1pc3Npb24gKEdJQykgKEV4ZWN1dGl2ZSBPZmZpY2UgZm9yIEFkbWluaXN0cmF0aW9uIGFuZCBGaW5hbmNlKRlIYW1wZGVuIERpc3RyaWN0IEF0dG9ybmV5IUhhbXBzaGlyZSBDb3VudHkgU2hlcmlmZidzIE9mZmljZRBIZWFsdGggQ29ubmVjdG9yG0xpZXV0ZW5hbnQgR292ZXJub3JzIE9mZmljZTpNYXNzYWNodXNldHRzIEFsbGlhbmNlIGZvciBFY29ub21pYyBEZXZlbG9wbWVudCAoTWFzc0Vjb24pXk1hc3NhY2h1c2V0dHMgQmF5IFRyYW5zcG9ydGF0aW9uIEF1dGhvcml0eSAoTUJUQSkgKE1hc3NhY2h1c2V0dHMgRGVwYXJ0bWVudCBvZiBUcmFuc3BvcnRhdGlvbik5TWFzc2FjaHVzZXR0cyBCb2FyZCBvZiBFbGVtZW50YXJ5IGFuZCBTZWNvbmRhcnkgRWR1Y2F0aW9uLE1hc3NhY2h1c2V0dHMgQm9hcmQgb2YgTGlicmFyeSBDb21taXNzaW9uZXJzNk1hc3NhY2h1c2V0dHMgQ29tbWlzc2lvbiBBZ2FpbnN0IERpc2NyaW1pbmF0aW9uIChNQ0FEKVZNYXNzYWNodXNldHRzIENvbW1pc3Npb24gZm9yIHRoZSBCbGluZCAoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKXFNYXNzYWNodXNldHRzIENvbW1pc3Npb24gZm9yIHRoZSBEZWFmIGFuZCBIYXJkIG9mIEhlYXJpbmcgKE1DREhIKSAoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKTFNYXNzYWNodXNldHRzIENvbW1pc3Npb24gb24gSW5kaWFuIEFmZmFpcnMgKE1DSUEpZE1hc3NhY2h1c2V0dHMgQ29tbWlzc2lvbiBvbiBMZXNiaWFuLCBHYXksIEJpc2V4dWFsLCBUcmFuc2dlbmRlciwgUXVlZXIgYW5kIFF1ZXN0aW9uaW5nIFlvdXRoIChMR0JUUSk2TWFzc2FjaHVzZXR0cyBDb21taXNzaW9uIG9uIHRoZSBTdGF0dXMgb2YgV29tZW4gKE1DU1cpME1hc3NhY2h1c2V0dHMgQ29udmVudGlvbiBDZW50ZXIgQXV0aG9yaXR5IChNQ0NBKSRNYXNzYWNodXNldHRzIEN1bHR1cmFsIENvdW5jaWwgKE1DQylvTWFzc2FjaHVzZXR0cyBEZXBhcnRtZW50IG9mIEFncmljdWx0dXJhbCBSZXNvdXJjZXMgKE1EQVIpKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgRW5lcmd5IGFuZCBFbnZpcm9ubWVudGFsIEFmZmFpcnMpX01hc3NhY2h1c2V0dHMgRGVwYXJ0bWVudCBvZiBDaGlsZHJlbiAmIEZhbWlsaWVzIChFeGVjdXRpdmUgT2ZmaWNlIG9mIEhlYWx0aCBhbmQgSHVtYW4gU2VydmljZXMpUU1hc3NhY2h1c2V0dHMgRGVwYXJ0bWVudCBvZiBDb3JyZWN0aW9uICAoRE9DKSAoRXhlY3V0aXZlIE9mZmljZSBvZiBQdWJsaWMgU2FmZXR5KT5NYXNzYWNodXNldHRzIERlcGFydG1lbnQgb2YgRWxlbWVudGFyeSBhbmQgU2Vjb25kYXJ5IEVkdWNhdGlvbnFNYXNzYWNodXNldHRzIERlcGFydG1lbnQgb2YgRW52aXJvbm1lbnRhbCBQcm90ZWN0aW9uIChERVApIChFeGVjdXRpdmUgT2ZmaWNlIG9mIEVuZXJneSBhbmQgRW52aXJvbm1lbnRhbCBBZmZhaXJzKV9NYXNzYWNodXNldHRzIERlcGFydG1lbnQgb2YgTWVudGFsIEhlYWx0aCAoRE1IKSAoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKV9NYXNzYWNodXNldHRzIERlcGFydG1lbnQgb2YgUHVibGljIEhlYWx0aCAoRFBIKSAoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKVVNYXNzYWNodXNldHRzIERlcGFydG1lbnQgb2YgUmV2ZW51ZSAoRXhlY3V0aXZlIE9mZmljZSBmb3IgQWRtaW5pc3RyYXRpb24gYW5kIEZpbmFuY2UpNE1hc3NhY2h1c2V0dHMgRGVwYXJ0bWVudCBvZiBUcmFuc3BvcnRhdGlvbiAoTWFzc0RPVCk0TWFzc2FjaHVzZXR0cyBEZXBhcnRtZW50IG9mIFRyYW5zcG9ydGF0aW9uIChNYXNzRE9UKTpNYXNzYWNodXNldHRzIERldmVsb3BtZW50IEZpbmFuY2UgQWdlbmN5IChNYXNzRGV2ZWxvcG1lbnQpN01hc3NhY2h1c2V0dHMgRGV2ZWxvcG1lbnRhbCBEaXNhYmlsaXRpZXMgQ291bmNpbCAoTUREQykzTWFzc2FjaHVzZXR0cyBEaXN0cmljdCBBdHRvcm5leXMgQXNzb2NpYXRpb24gKE1EQUEpT01hc3NhY2h1c2V0dHMgRGl2aXNpb24gb2YgQmFua3MgKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgSGVhbHRoIGFuZCBIdW1hbiBTZXJ2aWNlcylFTWFzc2FjaHVzZXR0cyBFY29ub21pYyBEZXZlbG9wbWVudCAmIEZpbmFuY2UgQWdlbmN5IChNYXNzRGV2ZWxvcG1lbnQpNE1hc3NhY2h1c2V0dHMgRWR1Y2F0aW9uYWwgRmluYW5jaW5nIEF1dGhvcml0eSAoTUVGQSlhTWFzc2FjaHVzZXR0cyBFbWVyZ2VuY3kgTWFuYWdlbWVudCBBZ2VuY3kgKE1FTUEpIChFeGVjdXRpdmUgT2ZmaWNlIG9mIFB1YmxpYyBTYWZldHkgYW5kIFNlY3VyaXR5KVlNYXNzYWNodXNldHRzIEVudmlyb25tZW50YWwgUG9saWNlKCBFeGVjdXRpdmUgT2ZmaWNlIG9mIEVuZXJneSBhbmQgRW52aXJvbm1lbnRhbCBBZmZhaXJzKR9NYXNzYWNodXNldHRzIEZpbG0gT2ZmaWNlIChNRk8pLE1hc3NhY2h1c2V0dHMgR2FtaW5nIENvbW1pc3Npb24gKE1hc3NHYW1pbmcpNE1hc3NhY2h1c2V0dHMgR292ZXJub3IncyBDb3VuY2lsIChFeGVjdXRpdmUgQ291bmNpbCkvTWFzc2FjaHVzZXR0cyBHcm93dGggQ2FwaXRhbCBDb3Jwb3JhdGlvbiAoTUdDQyksTWFzc2FjaHVzZXR0cyBIZWFsdGggUG9saWN5IENvbW1pc3Npb24gKEhQQylXTWFzc2FjaHVzZXR0cyBIaXN0b3JpY2FsIENvbW1pc3Npb24gKE1IQykgKE9mZmljZSBvZiB0aGUgU2VjcmV0YXJ5IG9mIHRoZSBDb21tb253ZWFsdGgpOU1hc3NhY2h1c2V0dHMgSG91c2luZyBGaW5hbmNlIEFnZW5jeSAoTUhGQSAvIE1hc3NIb3VzaW5nKU1NYXNzYWNodXNldHRzIE5hdGlvbmFsIEd1YXJkIChFeGVjdXRpdmUgT2ZmaWNlIG9mIFB1YmxpYyBTYWZldHkgYW5kIFNlY3VyaXR5KWdNYXNzYWNodXNldHRzIE9mZmljZSBmb3IgUmVmdWdlZXMgYW5kIEltbWlncmFudHMgKE1PUkkpIChFeGVjdXRpdmUgT2ZmaWNlIG9mIEhlYWx0aCBhbmQgSHVtYW4gU2VydmljZXMpV01hc3NhY2h1c2V0dHMgT2ZmaWNlIGZvciBWaWN0aW0gQXNzaXN0YW5jZSAoTU9WQSkgKFZpY3RpbSBhbmQgV2l0bmVzcyBBc3Npc3RhbmNlIEJvYXJkKWJNYXNzYWNodXNldHRzIE9mZmljZSBvZiBCdXNpbmVzcyBEZXZlbG9wbWVudCAoTU9CRCkoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKT1NYXNzYWNodXNldHRzIE9mZmljZSBvZiBDYW1wYWlnbiBhbmQgUG9saXRpY2FsIEZpbmFuY2UgKE9DUEYpbE1hc3NhY2h1c2V0dHMgT2ZmaWNlIG9mIENvYXN0YWwgWm9uZSBNYW5hZ2VtZW50IChDWk0pIChFeGVjdXRpdmUgT2ZmaWNlIG9mIEVuZXJneSBhbmQgRW52aXJvbm1lbnRhbCBBZmZhaXJzKUhNYXNzYWNodXNldHRzIE9mZmljZSBvZiBDb25zdW1lciBBZmZhaXJzIGFuZCBCdXNpbmVzcyBSZWd1bGF0aW9uIChPQ0FCUik3TWFzc2FjaHVzZXR0cyBPZmZpY2Ugb2YgSW5mb3JtYXRpb24gVGVjaG5vbG9neSAoTWFzc0lUKXFNYXNzYWNodXNldHRzIE9mZmljZSBvZiBJbnRlcm5hdGlvbmFsIFRyYWRlIGFuZCBJbnZlc3RtZW50IChNT0lUSSkoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKXhNYXNzYWNodXNldHRzIE9mZmljZSBvZiBUZWNobmljYWwgQXNzaXN0YW5jZSBhbmQgVGVjaG5vbG9neSAoT1RBKSAoRXhlY3V0aXZlIE9mZmljZSBvZiBFbmVyZ3kgYW5kIEVudmlyb25tZW50YWwgQWZmYWlycylhTWFzc2FjaHVzZXR0cyBPZmZpY2Ugb2YgVHJhdmVsIGFuZCBUb3VyaXNtIChNT1RUKSAoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKShNYXNzYWNodXNldHRzIE9mZmljZSBvbiBEaXNhYmlsaXR5IChNT0QpS01hc3NhY2h1c2V0dHMgUGFyb2xlIEJvYXJkIChFeGVjdXRpdmUgT2ZmaWNlIG9mIFB1YmxpYyBTYWZldHkgYW5kIFNlY3VyaXR5KVZNYXNzYWNodXNldHRzIFBlcm1pdCBSZWd1bGF0b3J5IE9mZmljZSAoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKSdNYXNzYWNodXNldHRzIFBvcnQgQXV0aG9yaXR5IChNYXNzUG9ydClXTWFzc2FjaHVzZXR0cyBSZWhhYmlsaXRhdGlvbiBDb21taXNzaW9uIChFeGVjdXRpdmUgT2ZmaWNlIG9mIEhlYWx0aCBhbmQgSHVtYW4gU2VydmljZXMpLk1hc3NhY2h1c2V0dHMgU2Nob29sIEJ1aWxkaW5nIEF1dGhvcml0eSAoTVNCQSkjTWFzc2FjaHVzZXR0cyBTZW50ZW5jaW5nIENvbW1pc3Npb25QTWFzc2FjaHVzZXR0cyBTdGF0ZSBBdGhsZXRpYyBDb21taXNzaW9uIChPZmZpY2Ugb2YgUHVibGljIFNhZmV0eSBhbmQgSW5zcGVjdGlvbik2TWFzc2FjaHVzZXR0cyBTdGF0ZSBDb2xsZWdlIEJ1aWxkaW5nIEF1dGhvcml0eSAoTVNDQkEpJk1hc3NhY2h1c2V0dHMgU3RhdGUgTG90dGVyeSBDb21taXNzaW9uS01hc3NhY2h1c2V0dHMgU3RhdGUgUG9saWNlIChFeGVjdXRpdmUgT2ZmaWNlIG9mIFB1YmxpYyBTYWZldHkgYW5kIFNlY3VyaXR5KVxNYXNzYWNodXNldHRzIFN0YXRlIFBvbGljZSBDcmltZSBMYWJvcmF0b3J5IChFeGVjdXRpdmUgT2ZmaWNlIG9mIFB1YmxpYyBTYWZldHkgYW5kIFNlY3VyaXR5KS5NYXNzYWNodXNldHRzIFdhdGVyIFJlc291cmNlcyBBdXRob3JpdHkgKE1XUkEpME1hc3NhY2h1c2V0dHMgV29ya2ZvcmNlIERldmVsb3BtZW50IEJvYXJkIChNV0RCKSpNYXNzR0lTIChCdXJlYXUgb2YgR2VvZ3JhcGhpYyBJbmZvcm1hdGlvbikKTWFzc0hlYWx0aAxNYXNzVmVudHVyZXMaTWlkZGxlc2V4IFNoZXJpZmYncyBPZmZpY2UqTXVuaWNpcGFsIFBvbGljZSBUcmFpbmluZyBDb21taXR0ZWUgKE1QVEMpPU5hbnR1Y2tldCBQbGFubmluZyAmIEVjb25vbWljIERldmVsb3BtZW50IENvbW1pc3Npb24gKE5QJkVEQykfTm9yZm9sayBDb3VudHkgU2hlcmlmZidzIE9mZmljZRlOb3Jmb2xrIERpc3RyaWN0IEF0dG9ybmV5MU5vcnRoZXJuIE1pZGRsZXNleCBDb3VuY2lsIG9mIEdvdmVybm1lbnRzIChOTUNPRykeTm9ydGh3ZXN0ZXJuIERpc3RyaWN0IEF0dG9ybmV5ME9mZmljZSBmb3IgQ2FyZWVyL1ZvY2F0aW9uYWwgVGVjaG5pY2FsIEVkdWNhdGlvbihPZmZpY2UgZm9yIFJlZnVnZWVzIGFuZCBJbW1pZ3JhbnRzIChPUkkpMU9mZmljZSBvZiBBZG9sZXNjZW50IEhlYWx0aCBhbmQgWW91dGggRGV2ZWxvcG1lbnQpT2ZmaWNlIG9mIEFwcGVhbHMgKERlcGFydG1lbnQgb2YgUmV2ZW51ZSkvT2ZmaWNlIG9mIENhbXBhaWduIGFuZCBQb2xpdGljYWwgRmluYW5jZSAoT0NQRikvT2ZmaWNlIG9mIENoaWxkcmVuLCBZb3V0aCBhbmQgRmFtaWxpZXMgUHJvZ3JhbXNiT2ZmaWNlIG9mIENvbnN1bWVyIEFmZmFpcnMgYW5kIEJ1c2luZXNzIFJlZ3VsYXRpb24gKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgSGVhbHRoIGFuZCBIdW1hbiBTZXJ2aWNlcykUT2ZmaWNlIG9mIERhbSBTYWZldHkwT2ZmaWNlIG9mIERpdmVyc2l0eSBhbmQgRXF1YWwgT3Bwb3J0dW5pdHkgKE9ERU8pK09mZmljZSBvZiBFbWVyZ2VuY3kgTWVkaWNhbCBTZXJ2aWNlcyAoT0VNUykiT2ZmaWNlIG9mIEVtcGxveWVlIFJlbGF0aW9ucyAoT0VSKWJPZmZpY2Ugb2YgRmlzaGluZyBhbmQgQm9hdGluZyBBY2Nlc3MgKE9GQkEpIChFeGVjdXRpdmUgT2ZmaWNlIG9mIEVuZXJneSBhbmQgRW52aXJvbm1lbnRhbCBBZmZhaXJzKSVPZmZpY2Ugb2YgRm9vZCBhbmQgTnV0cml0aW9uIFByb2dyYW1zKk9mZmljZSBvZiBHZW9ncmFwaGljIEluZm9ybWF0aW9uIChNYXNzR0lTKU5PZmZpY2Ugb2YgR3JhbnRzIGFuZCBSZXNlYXJjaCAoRXhlY3V0aXZlIE9mZmljZSBvZiBQdWJsaWMgU2FmZXR5IGFuZCBTZWN1cml0eSlgT2ZmaWNlIG9mIEdyYW50cyBhbmQgVGVjaG5pY2FsIEFzc2lzdGFuY2UgKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgRW5lcmd5IGFuZCBFbnZpcm9ubWVudGFsIEFmZmFpcnMpEk9mZmljZSBvZiBISVYvQUlEUyFPZmZpY2Ugb2YgSnVyeSBDb21taXNzaW9uZXIgKE9KQylNT2ZmaWNlIG9mIE1lZGljYWlkL01hc3NIZWFsdGggKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgSGVhbHRoIGFuZCBIdW1hbiBTZXJ2aWNlcykuT2ZmaWNlIG9mIE11bmljaXBhbCAmIFNjaG9vbCBUZWNobm9sb2d5IChPTVNUKRxPZmZpY2Ugb2YgUGF0aWVudCBQcm90ZWN0aW9uXk9mZmljZSBvZiBQZXJmb3JtYW5jZSBNYW5hZ2VtZW50IGFuZCBPdmVyc2lnaHQgKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgSGVhbHRoIGFuZCBIdW1hbiBTZXJ2aWNlcykvT2ZmaWNlIG9mIFByaXZhdGUgT2NjdXBhdGlvbmFsIFNjaG9vbCBFZHVjYXRpb25WT2ZmaWNlIG9mIFB1YmxpYyBTYWZldHkgYW5kIEluc3BlY3Rpb24gKEV4ZWN1dGl2ZSBPZmZpY2Ugb2YgSGVhbHRoIGFuZCBIdW1hbiBTZXJ2aWNlcykbT2ZmaWNlIG9mIFJlZ2lvbmFsIFBsYW5uaW5nNE9mZmljZSBvZiBTbWFsbCBCdXNpbmVzcyBhbmQgRW50cmVwcmVuZXVyc2hpcCAoT1NCRSkpT2ZmaWNlIG9mIFN0YXRpc3RpY3MgYW5kIEV2YWx1YXRpb24gKE9TRSkmT2ZmaWNlIG9mIFN0dWRlbnQgRmluYW5jaWFsIEFzc2lzdGFuY2UzT2ZmaWNlIG9mIFRlY2huaWNhbCBBc3Npc3RhbmNlIGFuZCBUZWNobm9sb2d5IChPVEEpHk9mZmljZSBvZiB0aGUgQXR0b3JuZXkgR2VuZXJhbB9PZmZpY2Ugb2YgdGhlIEJhciBDb3Vuc2VsIChPQkMpVU9mZmljZSBvZiB0aGUgQ2hpZWYgTWVkaWNhbCBFeGFtaW5lciAoRXhlY3V0aXZlIE9mZmljZSBvZiBQdWJsaWMgU2FmZXR5IGFuZCBTZWN1cml0eSlMT2ZmaWNlIG9mIHRoZSBDaGlsZCBBZHZvY2F0ZSAoRXhlY3V0aXZlIE9mZmljZSBvZiBIZWFsdGggYW5kIEh1bWFuIFNlcnZpY2VzKSdPZmZpY2Ugb2YgdGhlIENvbW1pc3Npb25lciBvZiBQcm9iYXRpb24ZT2ZmaWNlIG9mIHRoZSBDb21wdHJvbGxlchZPZmZpY2Ugb2YgdGhlIEdvdmVybm9yJU9mZmljZSBvZiB0aGUgSW5zcGVjdG9yIEdlbmVyYWwgKE9JRykrT2ZmaWNlIG9mIHRoZSBTZWNyZXRhcnkgb2YgdGhlIENvbW1vbndlYWx0aB9PZmZpY2Ugb2YgdGhlIFRheHBheWVyIEFkdm9jYXRlKE9mZmljZSBvZiBUcmVhc3VyZXIgYW5kIFJlY2VpdmVyLUdlbmVyYWxFT2ZmaWNlIG9mIFZlaGljbGUgTWFuYWdlbWVudCAoT1ZNKSAoRGl2aXNpb24gb2YgT3BlcmF0aW9uYWwgU2VydmljZXMpHE9mZmljZSBvZiBWZXRlcmFucyBFZHVjYXRpb24zUGVuc2lvbiBSZXNlcnZlcyBJbnZlc3RtZW50IE1hbmFnZW1lbnQgQm9hcmQgKFBSSU0pIVBseW1vdXRoIENvdW50eSBEaXN0cmljdCBBdHRvcm5leSRQbHltb3V0aCBDb3VudHkgU2hlcmlmZidzIERlcGFydG1lbnRuUHVibGljIEVtcGxveWVlIFJldGlyZW1lbnQgQWRtaW5pc3RyYXRpb24gQ29tbWlzc2lvbiAoUEVSQUMpIChFeGVjdXRpdmUgT2ZmaWNlIGZvciBBZG1pbmlzdHJhdGlvbiBhbmQgRmluYW5jZSkoUmVnaXN0cnkgb2YgVml0YWwgUmVjb3JkcyBhbmQgU3RhdGlzdGljc0lTb3V0aGVhc3Rlcm4gUmVnaW9uYWwgUGxhbm5pbmcgYW5kIEVjb25vbWljIERldmVsb3BtZW50IERpc3RyaWN0IChTUlBFREQpHlN0YXRlIEF1ZGl0b3LigJlzIE9mZmljZSAoT1NBKRlTdGF0ZSBCb2FyZCBvZiBSZXRpcmVtZW50F1N0YXRlIEV0aGljcyBDb21taXNzaW9uD1N0YXRlIEdlb2xvZ2lzdCNTdWZmb2xrIENvdW50eSBTaGVyaWZmJ3MgRGVwYXJ0bWVudBlTdWZmb2xrIERpc3RyaWN0IEF0dG9ybmV5Q1VuaXZlcnNpdHkgb2YgTWFzc2FjaHVzZXR0cyAoVU1hc3MpIChFeGVjdXRpdmUgT2ZmaWNlIG9mIEVkdWNhdGlvbikiV29yY2VzdGVyIENvdW50eSBEaXN0cmljdCBBdHRvcm5leSFXb3JjZXN0ZXIgQ291bnR5IFNoZXJpZmYncyBPZmZpY2UtV29ya2VycycgQ29tcGVuc2F0aW9uIEFkdmlzb3J5IENvdW5jaWwgKFdDQUMpBU90aGVyFeEBATABMQEyATMDMjI0ATQBNQE2ATcBOAE5AjEwAjExAjEyAjEzAjE0AjE1AjE2AjE3AjE4AjE5AjIwAjIxAjIyAjIzAjI0AjI1AjI2AjI3AjI4AjI5AjMwAjMxAjMyAjMzAjM0AjM1AjM2AjM3AjM4AjM5AjQwAjQxAjQyAjQzAjQ0AjQ1AjQ2AjQ3AjQ4AjQ5AjUwAjUxAjUyAjUzAjU0AjU1AjU2AjU3AjU4AjU5AjYwAjYxAjYyAjYzAjY0AjY1AjY2AjY3AjY4AjY5AjcwAjcxAjcyAjczAjc0Ajc1Ajc2Ajc3Ajc4Ajc5AjgwAjgxAjgyAjgzAjg0Ajg1Ajg2Ajg3Ajg4Ajg5AjkwAjkxAjkyAjkzAjk0Ajk1Ajk2Ajk3Ajk4Ajk5AzEwMAMxMDEDMTAyAzEwMwMxMDQDMTA1AzEwNgMxMDcDMTA4AzEwOQMxMTADMTExAzExMgMxMTMDMTE0AzExNQMxMTYDMTE3AzExOAMxMTkDMTIwAzEyMQMxMjIDMTIzAzEyNAMxMjUDMTI2AzEyNwMxMjgDMTI5AzEzMAMxMzEDMTMyAzEzMwMxMzQDMTM1AzEzNgMxMzcDMTM4AzEzOQMxNDADMTQxAzE0MgMxNDMDMTQ0AzE0NQMxNDYDMTQ3AzE0OAMxNDkDMTUwAzE1MQMxNTIDMTUzAzE1NAMxNTUDMTU2AzE1NwMxNTgDMTU5AzE2MAMxNjEDMTYyAzE2MwMxNjQDMTY1AzE2NgMxNjcDMTY4AzE2OQMxNzADMTcxAzE3MgMxNzMDMTc0AzE3NQMxNzYDMTc3AzE3OAMxNzkDMTgwAzE4MQMxODIDMTgzAzE4NAMxODUDMTg2AzE4NwMxODgDMTg5AzE5MAMxOTEDMTkyAzE5MwMxOTQDMTk1AzE5NgMxOTcDMTk4AzE5OQMyMDADMjAxAzIwMgMyMDMDMjA0AzIwNQMyMDYDMjA3AzIwOAMyMDkDMjEwAzIxMQMyMTIDMjEzAzIxNAMyMTUDMjE2AzIxNwMyMTgDMjE5AzIyMAMyMjEDMjIyAzIyMxQrA+EBZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnFgFmZAIJDw8WBB8EZR8GaGRkAhMPZBYCZg8QDxYGHwAFC0Rpc3BsYXlOYW1lHwEFBENvZGUfAmdkEBUDC0V4YWN0IE1hdGNoC0JlZ2lucyBXaXRoEUNvbnRhaW5zIEFueXdoZXJlFQMBMQEyATMUKwMDZ2dnFgECAmQCFw9kFgYCAw8QDxYGHwAFBVRpdGxlHwEFC1JlZ1BlcmlvZElkHwJnZBAVEwQyMDA1BDIwMDYEMjAwNwQyMDA4BDIwMDkEMjAxMAQyMDExBDIwMTIEMjAxMwQyMDE0BDIwMTUEMjAxNgQyMDE3BDIwMTgEMjAxOQQyMDIwBDIwMjEEMjAyMgQyMDIzFRMEMjAwNQQyMDA2BDIwMDcEMjAwOAQyMDA5BDIwMTAEMjAxMQQyMDEyBDIwMTMEMjAxNAQyMDE1BDIwMTYEMjAxNwQyMDE4BDIwMTkEMjAyMAQyMDIxBDIwMjIEMjAyMxQrAxNnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZGQCBw8PZBYCHwMFsQJpZigoZXZlbnQud2hpY2ggJiYgZXZlbnQud2hpY2ggPT0gMTMpIHx8IChldmVudC5rZXlDb2RlICYmIGV2ZW50LmtleUNvZGUgPT0gMTMpKXt2YXIgY29udHJvbHMgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnaW5wdXQnKTtmb3IgKHZhciBpID0gMDsgaSA8IGNvbnRyb2xzLmxlbmd0aDsgaSsrKXtpZiAoY29udHJvbHNbaV0uaWQuaW5kZXhPZignYnRuU2VhcmNoJykgPiAtMSl7ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoY29udHJvbHNbaV0uaWQpLmNsaWNrKCk7cmV0dXJuIGZhbHNlO319fWVsc2V7cmV0dXJuIHRydWU7fWQCDQ9kFgJmDxAPFgYfAAULRGlzcGxheU5hbWUfAQUEQ29kZR8CZ2QQFQMLRXhhY3QgTWF0Y2gLQmVnaW5zIFdpdGgRQ29udGFpbnMgQW55d2hlcmUVAwExATIBMxQrAwNnZ2cWAQICZAIZD2QWBgINDxAPFgYfAAUFVGl0bGUfAQULUmVnUGVyaW9kSWQfAmdkEBUTBDIwMDUEMjAwNgQyMDA3BDIwMDgEMjAwOQQyMDEwBDIwMTEEMjAxMgQyMDEzBDIwMTQEMjAxNQQyMDE2BDIwMTcEMjAxOAQyMDE5BDIwMjAEMjAyMQQyMDIyBDIwMjMVEwQyMDA1BDIwMDYEMjAwNwQyMDA4BDIwMDkEMjAxMAQyMDExBDIwMTIEMjAxMwQyMDE0BDIwMTUEMjAxNgQyMDE3BDIwMTgEMjAxOQQyMDIwBDIwMjEEMjAyMgQyMDIzFCsDE2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2cWAQISZAITDw9kFgIfAwWxAmlmKChldmVudC53aGljaCAmJiBldmVudC53aGljaCA9PSAxMykgfHwgKGV2ZW50LmtleUNvZGUgJiYgZXZlbnQua2V5Q29kZSA9PSAxMykpe3ZhciBjb250cm9scyA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdpbnB1dCcpO2ZvciAodmFyIGkgPSAwOyBpIDwgY29udHJvbHMubGVuZ3RoOyBpKyspe2lmIChjb250cm9sc1tpXS5pZC5pbmRleE9mKCdidG5TZWFyY2gnKSA+IC0xKXtkb2N1bWVudC5nZXRFbGVtZW50QnlJZChjb250cm9sc1tpXS5pZCkuY2xpY2soKTtyZXR1cm4gZmFsc2U7fX19ZWxzZXtyZXR1cm4gdHJ1ZTt9ZAIZDxBkZBYBZmQCIQ9kFgICAQ8PFgIfBGVkZAIjD2QWAgIBDw8WAh8EZWRkAiUPZBYCAgEPDxYCHwRlZGQYBAUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgcFKWN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkcmRiU2VhcmNoQnlUeXBlBS1jdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJHJkYlNlYXJjaEJ5Q2F0ZWdvcnkFLWN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkcmRiU2VhcmNoQnlDYXRlZ29yeQUxY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRyZGJTZWFyY2hCeUNvbnRyaWJ1dGlvbgUxY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRyZGJTZWFyY2hCeUNvbnRyaWJ1dGlvbgUtY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRyZGJTZWFyY2hCeUFjdGl2aXR5BS1jdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJHJkYlNlYXJjaEJ5QWN0aXZpdHkFTWN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkdWNTZWFyY2hSZXN1bHRCeUFjdGl2aXR5JGdyZHZTZWFyY2hSZXN1bHRCeUFjdGl2aXR5D2dkBVVjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJHVjU2VhcmNoUmVzdWx0QnlDb250cmlidXRpb24kZ3JkdlNlYXJjaFJlc3VsdEJ5Q29udHJpYnV0aW9uD2dkBVtjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJHVjU2VhcmNoUmVzdWx0QnlUeXBlQW5kQ2F0ZWdvcnkkZ3JkdlNlYXJjaFJlc3VsdEJ5VHlwZUFuZENhdGVnb3J5D2dk1r1szUoBaWTXRiSmt9ab49M0LWntaRmEfMhmwAZRj2I=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/LobbyistPublicSearch/WebResource.axd?d=rPon6cEdHZCFEOtdE3-0DdduDP757RLBgB7xY-OITV2vztgjVJVouPA_Bnr7T0YiT6zoHdjy9zLkSGoXG9ftTX80B4zWxOAzQB_UKCZPDnQ1&amp;t=637866922855519258" type="text/javascript"></script>
+
+
+<script src="/LobbyistPublicSearch/ScriptResource.axd?d=ppj-SiUp5W41fmeCUHn47reHJfrAH-CILSuaXXHCcWEephWrrrPVC4pTk_iiy8MZkbPS7x-u1ewuc-St2QoiDQm5XT22iHqktD2QthLJLu6C47RS4L3TCdfllDmlabGDMS-e8Jcd2UL4SZ6Jwuo2zaZ2jKtpLWOTXbbc9Xs7naY1&amp;t=ffffffffaa493ab8" type="text/javascript"></script>
+<script src="/LobbyistPublicSearch/ScriptResource.axd?d=3fhlQn1VLSXkk90gk6uyGRIKjLJDMhj0TxyLEQNj2SGfVTAh0wj0RTp5ggJU5Psz3I0x6ioF9xHs_Xd7_2f8f5GXpfLy3Opt7N8piN37rI20FxHtIb2HNap5Eq672l5ygL93Ww-SytHFsUqHNU1Ut1tbZXrf2PtjFumIqbydJMC1_YZkTFl9zXFVZ2kgJHLO0&amp;t=ffffffffaa493ab8" type="text/javascript"></script>
+<script src="/LobbyistPublicSearch/ScriptResource.axd?d=jZOpQDXTshhUG-edF01IbjCzxsRu6RvmZfXYwcy2Yavswzr24Y3ZoLA-GuX_zHyBcrG_Euon2XiPNRplbgLTFT4_PMp3GD0RI0QduyAlQ00qZvrxiaDtbRvAjjG6cFnI3pO9pmnjiPZKbR3_jPHz58QFjX5ThDgLjwd0ePVpLMQ1&amp;t=2842344b" type="text/javascript"></script>
+<script src="/LobbyistPublicSearch/ScriptResource.axd?d=i3ZMPXpK4KTQcyjZzE3Wxgw84YD3bDdOLr7xMfEJXdhGYWEZcC6-hTvboJI-l7qledpUOLAdEBvNOpI964wsfdorv0BXGr76aoKdUifZ7BSf7bG6f0BbHwLRf-LiK9PyUi72_kNaN1l3uPQQs9zLdywqv7M89krSDL_5xgnVOqk1&amp;t=2842344b" type="text/javascript"></script>
+<script src="/LobbyistPublicSearch/ScriptResource.axd?d=O6dQR-61Kt34O5MAJre91BYXl22PwxAsYEd6K-tQOUXT42KAzsIedYlRn66wqwzN6BPc6ljRv-XSu4o7yxkyA1Jme3rTINe6m7V8JodBsMCkqBoFeZcYN5w3Tf8r-ygXNg4tT5FrBaxhBU25vvYLUPg_wY62KxKXZt8ZN6ev8ujgGDsTTzCENl_xlj4qCFTq0&amp;t=2842344b" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+null;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="742D301F" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdACZZTzTZnjE4Cje2C7/wd+DkDyf470cCOHGtrrSwh/Rb9PqFO3idOFyM9fCUzXAEkpVBCm2Ci763eYCZKQwXy520RKMU4U8gNFPvHb0hbvJlywlk4zirJ21jJhPg0nvRlkntvOJz+Iqgx+QdLPjcgX+dQdnEzLDnxu6Nif886n88LVTKQ2qdwr40EocBInwAp/u7uAVX2huqDA8afAdtOxmuvDmdws7tqHm9u3v5uM7u35PPhHZI1EqTEOwhvMduWJz1IFz82yS3zybn0+Bz0l24KaYy0gtryqhMrRfHPSP7YiuE2o/wwwap/DsZEYoQ0f9OMHLf5xN0DJ5DSq4X0KBhDut1TyTyaqMpylm7mCC/wSPinKTu0rHvnB0p3gb4LcnfDC63ejm/6dM0fCDb5DAMAjiguxf7tmDkvOfYepNTPmupYUr0K3WWe9XPeQvp1JTTFHy3l05snwgCREItTGpgfdlsD9VOUsnYopdj6z3fgBg98La7/A5mXm7qlUi1ZvocOUYs4ISeI5MiWB55pA/RHWJS7hnOn/ofqdUOlwIxx406mUEguuBAyjUuWRU7ooCfRLsrE1AKdI1I6Ks6p+ajRBI5Pi0/KMbnVi66Fl06pLoXOAKgsHifTagBkAn3yklt/zGAfHU7o9VlffUJ15APkNO4hdAmXKDZDgrxa7xd8YcuTO3SqY5DCLx9tEEo0dNqXlF0c+TgDutWE0urlNNnCj+veo1lNpcVnQJRUMgZkPTpAiNuaAm9S4bUAiQWhzwzjbiUw8TyOlRlWx4kA9ZwjkxbpcxoWPNP2dR2wiSei2zklVXGeFtxmvXcuFo1dsmnUyYdzjqXmmeFTtW1roPk" />
+</div>                
+                    <table style="width: 750px; margin-top: 18pt; background-color: white; padding-top: 40px;" border="0" cellpadding="0" cellspacing="0" align="center">
+                        <tr>
+                            <td style="padding-left: 24px">
+                                
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ContentPlaceHolder1$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+<table style="width: 100%; background-color: white; margin: 0" border="0" cellpadding="0" cellspacing="0">
+    <tr style="height: 36pt">
+        <td style="font: bold 25px verdana">Lobbyist Public Search</td>
+        <td rowspan="2" style="width: 25%" align="right">
+            <img src="Images/MAStateHouseSmall.jpg" id="ContentPlaceHolder1_Img1" alt="Mass. state house" style="height:125px; width: 140px" />
+        </td>
+    </tr>
+    <tr style="vertical-align: top">     
+        <td style="width:75%; text-align: left">
+            
+
+<table style="Width:100%" class="p1">
+    <tr>
+        <td rowspan="2" style="width: 30%; border: solid 1px silver; padding: 9px; text-align: left">
+            Records prior to registration year 2005 are not available online. 
+            <br />
+            <br />
+            
+            Contact the Lobbyist Division <a href="/divisions/about-us/contact-us.htm" target="_blank">here</a> for assistance.
+        </td>
+        <td style="padding-bottom: 6px; padding-left: 10px" >Search data is collected from registration records and disclosure reports 
+        submitted by lobbyists, lobbying entities, and their clients. Massachusetts General Law requires any party providing or retaining 
+        lobbying services to register annually, and submit disclosure reports twice a year.  
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="padding-bottom: 6px; padding-left: 10px" >Your comments are welcome:&nbsp;
+            <a href="mailto:lob@sec.state.ma.us" target="_blank" class="BlueLinks">submit feedback</a>
+        </td>
+    </tr>
+</table>
+        </td>
+    </tr>
+</table>
+
+<table style="width: 100%; margin-top: 12pt" border="0" cellspacing="0" cellpadding="0" >
+    <tr>
+        <td style="width: 100%">
+            <table style="width: 100%" border="0" cellspacing="0" cellpadding="0" class="p1">
+                <tr style="vertical-align: bottom">
+                    <td style="padding: 12pt 0pt 6pt 3pt">
+                        <span id="ContentPlaceHolder1_Label1" class="h4">Select search category:</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span id="ContentPlaceHolder1_Label2" class="p1"> </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="ContentPlaceHolder1_rdbSearchByType" type="radio" name="ctl00$ContentPlaceHolder1$Search" value="rdbSearchByType" checked="checked" /><label for="ContentPlaceHolder1_rdbSearchByType">Lobbyist, Lobbyist Entity, or Client</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input id="ContentPlaceHolder1_rdbSearchByCategory" type="radio" name="ctl00$ContentPlaceHolder1$Search" value="rdbSearchByCategory" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$rdbSearchByCategory\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="ContentPlaceHolder1_rdbSearchByCategory">Industry Type</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input id="ContentPlaceHolder1_rdbSearchByContribution" type="radio" name="ctl00$ContentPlaceHolder1$Search" value="rdbSearchByContribution" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$rdbSearchByContribution\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="ContentPlaceHolder1_rdbSearchByContribution">Campaign Contribution</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input id="ContentPlaceHolder1_rdbSearchByActivity" type="radio" name="ctl00$ContentPlaceHolder1$Search" value="rdbSearchByActivity" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$rdbSearchByActivity\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="ContentPlaceHolder1_rdbSearchByActivity">Activity or Bill</label>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table style="width: 100%; border: solid 0px white" cellspacing="0" cellpadding="0">
+    <tr valign="top">
+        <td style="width: 100%" class="p1"> 
+            
+              
+            
+<link href="../Css/StyleSheet.css" rel="stylesheet" type="text/css" />
+
+<table style="width: 100%; background-color: white; margin: 0" border="0" cellpadding="0" cellspacing="9">
+    <tr>
+        <td style="font-size: 2pt">&nbsp;</td>
+    </tr>
+</table>
+<table style="width: 100%; background-color: white" border="0" cellpadding="5" cellspacing="12">
+    <tr>
+        <td style="width: 30%">
+            <span id="ContentPlaceHolder1_ucSearchCriteriaByType_Label2" class="p1">Select registration year:</span>
+        </td>
+        <td style="width: 70%">
+            <select name="ctl00$ContentPlaceHolder1$ucSearchCriteriaByType$ddlYear" id="ContentPlaceHolder1_ucSearchCriteriaByType_ddlYear" class="p3" style="width:220px;">
+	<option value="2005">2005</option>
+	<option value="2006">2006</option>
+	<option value="2007">2007</option>
+	<option value="2008">2008</option>
+	<option value="2009">2009</option>
+	<option value="2010">2010</option>
+	<option value="2011">2011</option>
+	<option value="2012">2012</option>
+	<option value="2013">2013</option>
+	<option value="2014">2014</option>
+	<option value="2015">2015</option>
+	<option value="2016">2016</option>
+	<option value="2017">2017</option>
+	<option value="2018">2018</option>
+	<option value="2019">2019</option>
+	<option value="2020">2020</option>
+	<option value="2021">2021</option>
+	<option value="2022">2022</option>
+	<option selected="selected" value="2023">2023</option>
+
+</select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span id="ContentPlaceHolder1_ucSearchCriteriaByType_Label3" class="p1">Enter name:</span>
+        </td>
+        <td>
+            <input name="ctl00$ContentPlaceHolder1$ucSearchCriteriaByType$txtN_ame" type="text" maxlength="150" id="ContentPlaceHolder1_ucSearchCriteriaByType_txtN_ame" class="p3" onkeydown="if((event.which &amp;&amp; event.which == 13) || (event.keyCode &amp;&amp; event.keyCode == 13)){var controls = document.getElementsByTagName(&#39;input&#39;);for (var i = 0; i &lt; controls.length; i++){if (controls[i].id.indexOf(&#39;btnSearch&#39;) > -1){document.getElementById(controls[i].id).click();return false;}}}else{return true;}" style="width:215px;" />
+            <input type="hidden" name="ctl00$ContentPlaceHolder1$ucSearchCriteriaByType$txtName_Watermark_ClientState" id="ContentPlaceHolder1_ucSearchCriteriaByType_txtName_Watermark_ClientState" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span id="ContentPlaceHolder1_ucSearchCriteriaByType_Label4" class="p1">Select a search option:</span>
+        </td>
+        <td>
+            <select name="ctl00$ContentPlaceHolder1$ucSearchCriteriaByType$lddSearchType$DropDown" id="ContentPlaceHolder1_ucSearchCriteriaByType_lddSearchType_DropDown" class="p3" style="background-color:White;width:220px;">
+	<option value="1">Exact Match</option>
+	<option value="2">Begins With</option>
+	<option selected="selected" value="3">Contains Anywhere</option>
+
+</select>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span id="ContentPlaceHolder1_ucSearchCriteriaByType_Label5" class="p1">Select lobbyist type:</span>
+        </td>
+        <td>
+            <select name="ctl00$ContentPlaceHolder1$ucSearchCriteriaByType$drpType" id="ContentPlaceHolder1_ucSearchCriteriaByType_drpType" class="p3" style="width:220px;">
+	<option value="L">Lobbyist or Lobbying Entity</option>
+	<option value="C">Client</option>
+	<option selected="selected" value="Z">ALL</option>
+
+</select>
+        </td>
+    </tr>
+</table>
+            
+        </td>
+    </tr>
+</table>
+<table style="width: 100%; border: solid 0px white" class="p1" cellspacing="13" cellpadding="0">
+    <tr valign="middle" style="height: 36px">
+        <td style="width: 30%; padding-left: 00pt; font-weight: bold">
+            <span id="ContentPlaceHolder1_Label6">Select results per page:</span>
+        </td>
+        <td style="width: 30%;">
+            <select name="ctl00$ContentPlaceHolder1$drpPageSize" id="ContentPlaceHolder1_drpPageSize" class="p3" style="background-color:White;width:150px;">
+	<option value="20000">View all results</option>
+	<option value="25">25 results</option>
+	<option value="50">50 results</option>
+	<option value="75">75 results</option>
+	<option selected="selected" value="100">100 results</option>
+
+</select>
+        </td>
+        <td style="width: 40%; text-align: left">
+            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSearch" value="Search" id="ContentPlaceHolder1_btnSearch" style="font-weight:bold;height:25px;width:100px;" />
+        </td>
+    </tr>
+</table> 
+
+<table style="width: 100%; margin:0" border="0" cellspacing="0" cellpadding="0" class="p1">
+         <tr>
+            <td>
+                
+<link href="../Css/StyleSheet.css" rel="stylesheet" type="text/css" />
+
+<table style="width: 100%; background-color: white; margin: 0" border="0" cellpadding="0" cellspacing="0">
+    <tr style="vertical-align: top; text-align: left">
+        <td style="padding: 0pt 0pt 9pt 0pt">
+            <span id="ContentPlaceHolder1_ucSearchResultByTypeAndCategory_lblResult" class="ErrorMessage" style="font-size:10pt;"></span>        
+        </td>
+    </tr>
+    
+    <tr style="vertical-align: top; text-align: left">
+        <td>
+            <div id="printGrid">
+                <div>
+
+</div>
+            </div>       
+                        
+        </td>
+    </tr>
+</table>
+
+                
+<link href="../Css/StyleSheet.css" rel="stylesheet" type="text/css" />
+
+<table style="width: 100%; background-color: white; margin: 0" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td style="padding: 0pt 0pt 9pt 0pt; text-align: left">
+            <span id="ContentPlaceHolder1_ucSearchResultByContribution_lblResult" class="ErrorMessage" style="font-size:10pt;"></span>         
+        </td>
+    </tr>
+    <tr style="vertical-align: top">
+        <td>
+            <div id="printGrid">
+                <div>
+
+</div>
+            </div>       
+                        
+        </td>
+    </tr>
+</table>
+
+                
+<link href="../Css/StyleSheet.css" rel="stylesheet" type="text/css" />
+
+<table style="width: 100%; margin: 0" cellpadding="0" cellspacing="0" border="0">
+    <tr style="height: 36pt">
+        <td style="text-align: left">
+            <span id="ContentPlaceHolder1_ucSearchResultByActivity_lblResult" class="ErrorMessage" style="font-size:10pt;"></span>        
+        </td>
+    </tr>            
+    <tr>
+        <td>
+            <div id="printGrid">
+                <div>
+
+</div>
+            </div>       
+                        
+        </td>
+    </tr>
+</table>
+
+            </td>
+        </tr>
+    </table>
+
+                            </td>
+                        </tr>
+                    </table>
+            
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ContentPlaceHolder1_ucSearchCriteriaByType_txtName_Watermark_ClientState","WatermarkCssClass":"watermarked","WatermarkText":"Last Name or Company Name","id":"ContentPlaceHolder1_ucSearchCriteriaByType_txtName_Watermark"}, null, null, $get("ContentPlaceHolder1_ucSearchCriteriaByType_txtN_ame"));
+});
+//]]>
+</script>
+</form>
+			<html>
+    <style>
+        
+/*.sec-footer{font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif"}
+.sec-footer-name-title{font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif"}
+.sec-footer-connect{font-size:16px; font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif"}
+address.sec-footer-mail{font-size:14px; font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif"}
+p a:link{text-decoration:none!important;}
+.terms-accessibility{font-size:12px; font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif"}*/      
+    </style>
+    <body>
+        <div style="float:left; clear:both; width:100%; height:auto; background-color:#fff;padding-top:20px;">
+            <div class="sec-footer">
+                <div class="sec-footer-name-title">
+                    <span class="sec-footer-name">William Francis Galvin</span>
+                    <span class="sec-footer-title">Secretary of the Commonwealth of Massachusetts</span>
+                    <address class="sec-footer-mail"><a style="line-height:1.3em;font-size:14px; font-family:Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'"  href="https://www.google.com/maps/place/Secretary+of+State/@42.3590302,-71.0618052,18.08z/data=!3m1!5s0x89e3709b31b58b45:0xb9ca4a5ec000fbec!4m5!3m4!1s0x89e37087e947b017:0x400700461f383298!8m2!3d42.3595949!4d-71.0621929" target="_new">One Ashburton Place<br/>
+                    Boston, MA &nbsp; 02108</a><br/>
+                    <p><a style="font-size:14px; font-family:Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'" href="tel:1-800-392-6090">1-800-392-6090</a><br/>
+                    <a style="line-height:1.3em;font-size:14px; font-family:Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'" href="mailto:cis@sec.state.ma.us">cis@sec.state.ma.us</a></p>
+                    </address>
+                </div>
+
+                <div class="sec-footer-connect">
+                    <div class="sec-footer-connect-heading"><h3>Connect with Us</h3></div>
+                    <div class="footer-icons">
+                        <p><a class="usa-social-link usa-social-link--youtube" style="margin-right:0px;" href="https://www.youtube.com/mrvoterreg" target="new"><span>YouTube</span></a>
+                        <a class="usa-social-link usa-social-link--twitter" style="margin-right:10px;" href="https://twitter.com/secretaryofmass" target="new"><span>Twitter</span></a></p>
+                    </div>
+                 </div>
+
+                <div class="terms-accessibility">
+                    <span><a style="font-size:14px; font-family:Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'" href="https://www.sec.state.ma.us/divisions/terms.htm">Terms and Conditions</a></span> &nbsp; &nbsp; 
+                    <span><a style="font-size:14px; font-family:Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'" href="https://www.sec.state.ma.us/divisions/accessibility-statement.htm">Accessibility Statement</a></span>
+                </div>
+            </div>
+        </div>
+        <!-- NEED FOR LOCAL NAV -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- NEED FOR GLOBAL NAV -->
+<script src="/assets/uswds-2_11_2/js/uswds.min.js"></script>
+    </body>
+</html>
+		</div>
+	</div>
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=2&cb=1618112153" async></script></body>
+</html>

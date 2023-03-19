@@ -2,8 +2,9 @@ from types import SimpleNamespace
 from bs4 import BeautifulSoup as bs
 import psycopg2.extras as extras
 import src.settings as settings
-
-import psycopg2, requests, logging
+from src.utils import insert_table
+import src.lobbyingScraper as ls
+import psycopg2, requests, logging, datetime
 
 #####
 # PageFactory:
@@ -17,7 +18,7 @@ class PageFactory:
             logging.exception("PageFactory requires a url")
             return BlankPage()
         logging.debug(f'Pulling data from URL: {url}')
-        html = PageFactory.pull_html(url)
+        html = ls.pull_html(url)
         soup = bs(html, 'html.parser')
 
         if PageFactory.check_validity(soup, url):
@@ -25,11 +26,11 @@ class PageFactory:
         else:
             return BlankPage()
 
-    def pull_html(url):
-        headers={"User-Agent": "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"}
-        result = requests.get(url, headers=headers)
-        result.raise_for_status()
-        return result.content
+    # def pull_html(url):
+    #     headers={"User-Agent": "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"}
+    #     result = requests.get(url, headers=headers)
+    #     result.raise_for_status()
+    #     return result.content
 
     def check_validity(soup, url):
         if soup.h1 and soup.h1.text == 'An Error Occurred':
@@ -196,7 +197,7 @@ class DataPage:
             if self.tables.__dict__[table]:
                 for i, row in enumerate(self.tables.__dict__[table]):
                     if len(row) != len(self.columns_dict[table]):
-                        logging.warning(f"Invalid row length in table {table}. Removing row.")
+                        logging.warning(f"Invalid row length in table {table}. Removing row.\n{self.url}")
                         del self.tables.__dict__[table][i]
 
     ################
@@ -212,7 +213,15 @@ class DataPage:
 
     def write_header_to_psql(self, conn, header_id):
         table = [tuple(row) for row in [[str(header_id)]+self.header]]
-        return self.execute_insert_table_query('headers', table, conn)
+        self.update_urls_table(conn)
+        return execute_insert_table_query('headers', table, conn)
+
+    def update_urls_table(self, conn):
+        url = self.url
+        today = datetime.datetime.now().date()
+        with conn.cursor() as cursor:
+            query = "UPDATE disclosure_urls SET last_scraped = %s WHERE url = %s"
+            cursor.execute(query,(today, url))
 
     def write_table_to_psql(self, table_name, conn, header_id):
         table_list = self.tables.__dict__[table_name].copy()
@@ -220,7 +229,7 @@ class DataPage:
         if not table_list: return True #If the table is empty let's not waste any time
 
         table = [tuple([str(header_id)]+row) for row in table_list]
-        return self.execute_insert_table_query(table_name, table, conn)
+        return execute_insert_table_query(table_name, table, conn)
 
     def get_header_id(self, conn):
         with conn.cursor() as cursor:
@@ -230,22 +239,10 @@ class DataPage:
             header_id = response + 1 if response else 1
         return header_id
 
-    #returns true if all rows of the table are uploaded to the database or if table is empty
-    #returns false if any errors occur
-    def execute_insert_table_query(self, table_name, table, conn):
-        columns = DataPage.columns_dict['all'] + DataPage.columns_dict[table_name]
-        cols = ','.join([col.lower().replace(",","").replace(" ","_").replace('/','or') for col in columns])
-        query = "INSERT INTO %s(%s) VALUES %%s" % (table_name, cols)
 
-        with conn.cursor() as cursor:
-            try:
-                extras.execute_values(cursor, query, table)
-                conn.commit()
-                logging.debug(f"Data successfully inserted into table '{table_name}'")
-                return True
 
-            except (Exception, psycopg2.DatabaseError) as error:
-                logging.warning(f"Error: {error} On table {table_name}")
-                conn.rollback()
-                cursor.close()
-                return False
+#returns true if all rows of the table are uploaded to the database or if table is empty
+#returns false if any errors occur
+def execute_insert_table_query(table_name, table, conn):
+    columns = DataPage.columns_dict['all'] + DataPage.columns_dict[table_name]
+    insert_table(table_name, columns, table)

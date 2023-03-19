@@ -1,93 +1,64 @@
-import requests, psycopg2, logging
+import requests, psycopg2, logging, datetime
 import src.settings as settings
 from psycopg2 import sql
+import psycopg2.extras as extras
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
+from bs4 import BeautifulSoup as bs
+
 ########################
 # Misc Utility Methods #
 ########################
 
+# import src.lobbyingScraper as ls
 def pull_html(url):
     headers={"User-Agent": "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"}
-    result = requests.get(url, headers=headers)
+    result = requests.get(str(url), headers=headers)
     result.raise_for_status()
     return result.content
 
-# Equivalent to converting to a set and back, but it preserves list order
-def unique_values(sequence):
-    seen = set()
-    return [x for x in sequence if x not in seen and not seen.add(x)]
-
-# Returns values of new_sequence that don't appear in old_sequence.
-# This is so I only process new urls when I scrape recent reports
-def new_values(new_sequence, old_sequence):
-    return [x for x in new_sequence if x not in old_sequence]
-
-def fetch_conn_and_cursor(params_dict, skip_db=False):
-    if skip_db:
-        params_dict = params_dict.copy()
-        params_dict.pop('database')
-
+def create_conn(params_dict = settings.psql_params_dict):
     conn = psycopg2.connect(**params_dict)
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT) # <-- ADD THIS LINE
-    cursor = conn.cursor()
-    return conn, cursor
+    return conn
 
 def execute_query(sql_query, query_vars = None, params_dict = settings.psql_params_dict):
-    conn, cursor = fetch_conn_and_cursor(params_dict)
-    cursor.execute(sql_query, query_vars)
-    response = cursor.fetchall()
-    conn.close()
+    with create_conn(params_dict) as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(sql_query, query_vars)
+            response = cursor.fetchall()
     return response
-
-def does_table_exist(table_name, params_dict = None):
-    response = execute_query("select exists(select * from information_schema.tables where table_name=%s)", (table_name,), params_dict=params_dict)
-    response = response[0][0]
-    return response
-
-def does_database_exist(database_name, params_dict = None):
-    params_dict = settings.psql_test_params_dict.copy()
-    database_name = params_dict['database']
-    params_dict['database'] = 'postgres'
-
-    list_database = execute_query("select datname from pg_database;", params_dict=params_dict)
-    return (database_name,) in list_database
-
 
 def execute_sql_file(filename, params_dict = settings.psql_params_dict):
     with open(filename, 'r') as f:
         sql_file = f.read().splitlines()
+
     sql_commands = " ".join(sql_file).split(";")
-    conn, cursor = fetch_conn_and_cursor(params_dict)
-    for command in sql_commands:
-        if command:
-            logging.debug(f'Executing sql query {command}')
-            cursor.execute(command)
-    conn.commit()
-    conn.close()
+    with create_conn(params_dict) as conn:
+        with conn.cursor() as cursor:
 
-def generate_database_if_not_exists(params_dict):
-    database = params_dict['database']
-    if not does_database_exist(database):
-        logging.info(f"Creating database {database}")
-        conn, cursor = fetch_conn_and_cursor(params_dict, skip_db=True)
-        cursor.execute(sql.SQL("CREATE DATABASE {}").format(sql.Identifier(database)))
-        conn.close()
+            for command in sql_commands:
+                if command:
+                    logging.debug(f'Executing sql query {command}')
+                    cursor.execute(command)
+    return
 
-    if not does_table_exist('headers', params_dict = params_dict):
-        logging.info(f"Running migrations against {database}")
-        execute_sql_file('migrations/create_tables.sql', params_dict = params_dict)
+def insert_table(table_name, columns, rows, params_dict=settings.psql_params_dict):
+    cols = ','.join([col.lower().replace(",","").replace(" ","_").replace('/','or') for col in columns])
+    query = "INSERT INTO %s(%s) VALUES %%s" % (table_name, cols)
+    response = False
+    with create_conn(params_dict) as conn:
+        with conn.cursor() as cursor:
+            try:
+                extras.execute_values(cursor, query, rows)
+                conn.commit()
+                logging.debug(f"Data successfully inserted into table '{table_name}'")
+                response = True
+
+            except (Exception, psycopg2.DatabaseError) as error:
+                logging.warning(f"Error: {error} On table {table_name}")
+                conn.rollback()
+                cursor.close()
+                response = False
+    return response
 
 
-def re_create_test_database():
-    params_dict = settings.psql_test_params_dict.copy()
-    database_name = params_dict['database']
-    params_dict['database'] = 'postgres'
-
-    conn, cursor = fetch_conn_and_cursor(params_dict)
-
-    if does_database_exist(database_name):
-        cursor.execute(sql.SQL("DROP DATABASE {}").format(sql.Identifier(database_name)))
-    print(database_name)
-    cursor.execute(sql.SQL("CREATE DATABASE {}").format(sql.Identifier(database_name)))
-    conn.close()
-    execute_sql_file('migrations/create_tables.sql', params_dict = settings.psql_test_params_dict)
