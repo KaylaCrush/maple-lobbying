@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS disclosure_urls;
 DROP TABLE IF EXISTS headers;
 DROP TABLE IF EXISTS lobbying_activity;
 DROP TABLE IF EXISTS pre_2016_lobbying_activity;
@@ -8,6 +9,15 @@ DROP TABLE IF EXISTS salaries;
 DROP TABLE IF EXISTS operating_expenses;
 DROP TABLE IF EXISTS met_expenses;
 DROP TABLE IF EXISTS additional_expenses;
+
+CREATE TABLE IF NOT EXISTS disclosure_urls (
+  url VARCHAR(150),
+  year INTEGER,
+  entity VARCHAR(255),
+  last_accessed DATE,
+  last_scraped DATE,
+  PRIMARY KEY(url)
+);
 
 CREATE TABLE IF NOT EXISTS headers (
   header_id INTEGER UNIQUE,

@@ -1,12 +1,12 @@
 import os
 
 
-database = "maple_lobbying"
+# database = "maple_lobbying"
 test_database = "lobbying_test"
 
 host = os.getenv("DB_HOST", "localhost")
 port = os.getenv("DB_PORT", "5432")
-user = os.getenv("DB_USER", "geekv")
+user = os.getenv("DB_USER", "geekc")
 password = os.getenv("DB_PASSWORD", "asdf")
 dbname = os.getenv("DB_NAME", test_database)
 
