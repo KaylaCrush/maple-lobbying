@@ -206,9 +206,9 @@ class DataPage:
     def save(self, params_dict = settings.psql_params_dict):
         with  psycopg2.connect(**params_dict) as conn:
             header_id = self.get_header_id(conn)
-            if self.write_header_to_psql(conn, header_id):
-                for table_name in self.tables.__dict__.keys():
-                    self.write_table_to_psql(table_name, conn, header_id)
+            #if self.write_header_to_psql(conn, header_id):
+            for table_name in self.tables.__dict__.keys():
+                self.write_table_to_psql(table_name, conn, header_id)
 
     def write_header_to_psql(self, conn, header_id):
         table = [tuple(row) for row in [[str(header_id)]+self.header]]
