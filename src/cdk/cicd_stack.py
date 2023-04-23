@@ -23,7 +23,7 @@ class CiCdStack(Stack):
                 "Synth",
                 input=pipelines.CodePipelineSource.connection(
                     "alexjball/maple-lobbying",
-                    "deployment",
+                    "main",
                     connection_arn="arn:aws:codestar-connections:us-east-2:968366361019:connection/6dfb0e73-d88e-4116-b519-2ed28df86f3c",
                 ),
                 commands=[

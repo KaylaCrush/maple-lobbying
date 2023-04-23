@@ -37,7 +37,7 @@ class LobbyingStack(Stack):
         events.Rule(
             self,
             "ScraperRule",
-            schedule=events.Schedule.expression("rate(6 months)"),
+            schedule=events.Schedule.expression("rate(120 days)"),
             targets=[
                 targets.EcsTask(cluster=self.cluster, task_definition=self.scraper_task)
             ],
